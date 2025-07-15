@@ -2,42 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Chapitre 10 : Matrices et systèmes linéaires – Introduction, méthodes de résolution et applications</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; background: #fefefe; color: #222; line-height: 1.7; }
-    h1, h2 { color: #0056b3; }
-    .correction { display: none; background: #eef8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
-    .question { margin-top: 25px; }
-    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
-    button:hover { background-color: #0056b3; }
-    textarea { width: 100%; font-family: monospace; padding: 8px; }
-    label { cursor: pointer; }
-    pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
-    ul, li { margin-left: 20px; }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      background-color: #0056b3;
-      margin-bottom: 30px;
-    }
-    nav li {
-      margin: 0 15px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-      font-size: 16px;
-    }
-    nav a:hover {
-      background-color: #007BFF;
-      border-radius: 4px;
-    }
-  </style>
+  <title>Chapitre 10 : Probabilités et statistiques – Première D</title>
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- MathJax -->
+  <!-- Intégration MathJax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -45,7 +13,6 @@
 </head>
 <body>
 
-<!-- Barre de navigation fixe -->
 <nav>
   <ul>
     <li><a href="index.html">Accueil</a></li>
@@ -54,162 +21,116 @@
     <li><a href="chapitre3.html">Chapitre 3</a></li>
     <li><a href="chapitre4.html">Chapitre 4</a></li>
     <li><a href="chapitre5.html">Chapitre 5</a></li>
-    <li><a href="chapitre10.html">Chapitre 10</a></li>
-    <!-- Ajoute d'autres chapitres ici -->
+    <li><a href="chapitre6.html">Chapitre 6</a></li>
+    <li><a href="chapitre7.html">Chapitre 7</a></li>
+    <li><a href="chapitre8.html">Chapitre 8</a></li>
+    <li><a href="chapitre9.html">Chapitre 9</a></li>
+    <li><a href="chapitre10.html" class="active">Chapitre 10</a></li>
   </ul>
 </nav>
 
 <header>
-  <h1>Chapitre 10 : Matrices et systèmes linéaires – Introduction, méthodes de résolution et applications</h1>
+  <h1>Chapitre 10 : Probabilités et statistiques</h1>
 </header>
 
 <main>
-  <h2>1. Introduction aux matrices</h2>
+  <h2>1. Introduction aux probabilités</h2>
   <p>
-    Une **matrice** est un tableau rectangulaire de nombres, organisés en lignes et en colonnes. Les matrices sont souvent utilisées pour résoudre des systèmes linéaires ou représenter des transformations géométriques.
+    En probabilité, l'objectif est de mesurer la vraisemblance d'un événement. 
+    La probabilité d'un événement \( A \) est définie par :
   </p>
+  \[
+  P(A) = \frac{\text{nombre d'événements favorables}}{\text{nombre total d'événements possibles}}
+  \]
 
   <h3>Exemple :</h3>
-  <p>Voici une matrice \( A \) de taille \( 2 \times 3 \) :</p>
   <p>
-    \[
-    A = \begin{pmatrix} 
-    1 & 2 & 3 \\
-    4 & 5 & 6 
-    \end{pmatrix}
-    \]
+    Si on lance un dé, la probabilité d'obtenir un 3 est :
   </p>
-  <p>Les éléments de la matrice \( A \) sont appelés **éléments de la matrice**, et chaque élément est référencé par son indice de ligne et de colonne.</p>
+  \[
+  P(\text{3}) = \frac{1}{6}
+  \]
+  car il y a 6 résultats possibles et un seul favorable.
 
-  <h2>2. Matrices inverses</h2>
+  <h2>2. Probabilités conditionnelles</h2>
   <p>
-    La **matrice inverse** d'une matrice \( A \), notée \( A^{-1} \), est la matrice qui, multipliée par \( A \), donne la matrice identité \( I \).
+    La probabilité conditionnelle d'un événement \( A \) sachant un autre événement \( B \) est donnée par :
   </p>
+  \[
+  P(A \mid B) = \frac{P(A \cap B)}{P(B)}
+  \]
+  Cette formule permet de calculer la probabilité de \( A \) lorsqu'on sait que \( B \) est réalisé.
+
   <h3>Exemple :</h3>
-  <p>Si \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \), alors la matrice inverse \( A^{-1} \) est donnée par :</p>
   <p>
-    \[
-    A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
-    \]
+    Si une carte est tirée au hasard d'un jeu de 52 cartes, la probabilité qu'elle soit un cœur sachant qu'elle est rouge est :
   </p>
-  <p>Où \( a, b, c, d \) sont les éléments de \( A \). Le déterminant de \( A \) est \( \text{det}(A) = ad - bc \).</p>
+  \[
+  P(\text{cœur} \mid \text{rouge}) = \frac{26}{52} = \frac{1}{2}
+  \]
 
-  <h2>3. Résolution des systèmes linéaires</h2>
-  <p>
-    Un **système linéaire** est un ensemble d'équations linéaires que l'on cherche à résoudre. Voici un exemple de système de deux équations à deux inconnues :
-  </p>
-  <p>
-    \[
-    \begin{aligned}
-    x + 2y &= 5 \\
-    3x - y &= 7
-    \end{aligned}
-    \]
-  </p>
-  <p>Ce système peut être résolu par des méthodes directes comme l'**élimination de Gauss** ou la **méthode de substitution**, ou en utilisant les matrices.</p>
-
-  <h2>4. Le déterminant d'une matrice</h2>
-  <p>
-    Le **déterminant** d'une matrice carrée est un nombre qui peut être utilisé pour déterminer si une matrice est inversible.
-  </p>
-  <p>Pour une matrice \( 2 \times 2 \) :</p>
-  <p>
-    \[
-    A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
-    \]
-  </p>
-  <p>Le déterminant de \( A \) est donné par :</p>
-  <p>
-    \[
-    \text{det}(A) = ad - bc
-    \]
-  </p>
-
-  <h2>5. Applications des matrices et des systèmes linéaires</h2>
-  <ul>
-    <li><strong>Informatique :</strong> Les matrices sont utilisées pour des transformations dans la programmation graphique, les réseaux neuronaux, etc.</li>
-    <li><strong>Économie :</strong> Les matrices sont utilisées pour représenter les relations économiques entre différentes variables.</li>
-    <li><strong>Ingénierie :</strong> Les matrices permettent de résoudre des équations dans la mécanique des structures.</li>
-    <li><strong>Physique :</strong> Les matrices sont utilisées pour résoudre des systèmes quantiques complexes.</li>
-  </ul>
-
-  <hr>
+  <hr />
 
   <h2>Exercices interactifs</h2>
 
   <div class="question">
     <strong>Question 1 :</strong><br />
-    Résoudre le système linéaire suivant à l'aide de la méthode des matrices :
-    \[
-    \begin{aligned}
-    x + 2y &= 8 \\
-    3x - y &= 7
-    \end{aligned}
-    \]<br />
-    <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+    Calculer la probabilité d'obtenir un chiffre pair lors du lancement d'un dé.<br />
+    <textarea rows="3"></textarea><br />
     <button onclick="toggleCorrection(this)">Afficher la correction</button>
     <div class="correction">
-      <strong>Correction :</strong><br />
-      La matrice associée au système est :
+      Il y a 3 résultats pairs (2, 4, 6) parmi les 6 possibles. La probabilité est donc :
       \[
-      A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 8 \\ 7 \end{pmatrix}
+      P(\text{pair}) = \frac{3}{6} = \frac{1}{2}
       \]
-      La solution est \( X = A^{-1}B \), donc \( x = 3 \) et \( y = 2 \).
     </div>
   </div>
 
   <div class="question">
     <strong>Question 2 :</strong><br />
-    Calculer le déterminant de la matrice suivante :
-    \[
-    A = \begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}
-    \]<br />
-    <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+    Un sac contient 5 boules rouges et 3 boules vertes. Si une boule est tirée au hasard, quelle est la probabilité qu'elle soit rouge ?<br />
+    <textarea rows="3"></textarea><br />
     <button onclick="toggleCorrection(this)">Afficher la correction</button>
     <div class="correction">
-      <strong>Correction :</strong><br />
-      Le déterminant de \( A \) est :
+      Il y a 5 boules rouges sur 8 boules au total, donc la probabilité est :
       \[
-      \text{det}(A) = 4 \times 3 - 2 \times 1 = 12 - 2 = 10
+      P(\text{rouge}) = \frac{5}{8}
       \]
     </div>
   </div>
 
   <div class="question">
     <strong>Question 3 :</strong><br />
-    Trouver l'inverse de la matrice \( A = \begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix} \).<br />
-    <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+    Si on tire une carte au hasard d'un jeu de 52 cartes, quelle est la probabilité d'obtenir un as ?<br />
+    <textarea rows="3"></textarea><br />
     <button onclick="toggleCorrection(this)">Afficher la correction</button>
     <div class="correction">
-      <strong>Correction :</strong><br />
-      La matrice inverse est donnée par :
+      Il y a 4 as dans un jeu de 52 cartes, donc la probabilité est :
       \[
-      A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} 5 & -3 \\ -2 & 1 \end{pmatrix}
-      \]
-      La matrice inverse est :
-      \[
-      A^{-1} = \begin{pmatrix} -5 & 3 \\ 2 & -1 \end{pmatrix}
+      P(\text{as}) = \frac{4}{52} = \frac{1}{13}
       \]
     </div>
   </div>
 
   <div class="question">
     <strong>Question 4 (quiz) :</strong><br />
-    Quelle est la condition nécessaire pour qu'une matrice soit inversible ?<br />
-    <input type="radio" name="q4" id="q4a" /> <label for="q4a">Le déterminant doit être nul.</label><br />
-    <input type="radio" name="q4" id="q4b" /> <label for="q4b">Le déterminant doit être non nul.</label><br />
-    <input type="radio" name="q4" id="q4c" /> <label for="q4c">La matrice doit être carrée.</label><br />
+    Quelle est la probabilité d'obtenir un nombre supérieur à 4 lors du lancement d'un dé à 6 faces ?<br />
+    <input type="radio" name="q4" id="q4a" value="a" /> <label for="q4a">\( \frac{1}{6} \)</label><br />
+    <input type="radio" name="q4" id="q4b" value="b" /> <label for="q4b">\( \frac{2}{6} \)</label><br />
+    <input type="radio" name="q4" id="q4c" value="c" /> <label for="q4c">\( \frac{3}{6} \)</label><br />
     <button onclick="toggleCorrection(this)">Afficher la correction</button>
     <div class="correction">
-      <strong>Correction :</strong><br />
-      La bonne réponse est : <strong>B)</strong> Le déterminant doit être non nul.
+      La probabilité d'obtenir un nombre supérieur à 4 (c'est-à-dire 5 ou 6) est :
+      \[
+      P(>4) = \frac{2}{6} = \frac{1}{3}
+      \]
     </div>
   </div>
 
   <div class="navigation">
-    <a href="chapitre9.html">Chapitre précédent : Algèbre linéaire</a>
-    <a href="index.html">Retour à l'accueil</a>  
-    <a href="chapitre11.html">Chapitre suivant : Applications avancées des matrices</a>
+    <a href="chapitre9.html">Chapitre précédent : Résolution graphique et algébrique d’équations</a>
+    <a href="index.html">Retour à l'accueil</a>
+    <a href="chapitre11.html">Chapitre suivant : Fonctions et dérivées</a>
   </div>
 </main>
 
