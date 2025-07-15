@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapitre 2 : Fonction dérivée et variations – Première D</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 750px; margin: 30px auto; padding: 0 15px; line-height: 1.6; color: #222; }
+    h1, h2 { color: #0056b3; }
+    .correction { display: none; background: #f0f8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
+    .question { margin-top: 25px; }
+    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
+    button:hover { background-color: #0056b3; }
+    textarea { width: 100%; font-family: monospace; padding: 8px; }
+    label { cursor: pointer; }
+  </style>
+
+  <!-- MathJax pour le rendu LaTeX -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<h1>Chapitre 2 : Fonction dérivée et variations</h1>
+
+<h2>1. Lien entre dérivée et sens de variation</h2>
+<p>
+Si \( f \) est une fonction dérivable sur un intervalle \( I \), alors :
+</p>
+<ul>
+  <li>Si \( f'(x) > 0 \) sur \( I \), alors \( f \) est strictement croissante sur \( I \).</li>
+  <li>Si \( f'(x) < 0 \) sur \( I \), alors \( f \) est strictement décroissante sur \( I \).</li>
+  <li>Si \( f'(x) = 0 \) en un point, alors il peut y avoir un extremum (minimum ou maximum).</li>
+</ul>
+
+<h3>Exemple :</h3>
+<p>Soit \( f(x) = -x^2 + 4x \)</p>
+<p>On calcule la dérivée :</p>
+<p>
+\[
+f'(x) = \frac{d}{dx}(-x^2 + 4x) = -2x + 4
+\]
+</p>
+<p>Résolvons \( f'(x) = 0 \) :</p>
+<p>
+\[
+-2x + 4 = 0 \Rightarrow x = 2
+\]
+</p>
+<p>Donc :</p>
+<ul>
+  <li>Si \( x < 2 \), alors \( f'(x) > 0 \) → fonction croissante</li>
+  <li>Si \( x > 2 \), alors \( f'(x) < 0 \) → fonction décroissante</li>
+</ul>
+<p>Le maximum est atteint en \( x = 2 \).</p>
+
+<hr />
+
+<h2>Exercices interactifs</h2>
+
+<div class="question">
+  <strong>Question 1 :</strong><br />
+  Soit \( f(x) = 3x^2 - 6x \). Détermine le signe de \( f'(x) \) et les variations de la fonction.<br />
+  <textarea rows="4" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \( f'(x) = 6x - 6 \)<br />
+    On résout \( f'(x) = 0 \Rightarrow 6x - 6 = 0 \Rightarrow x = 1 \)<br />
+    - \( f'(x) < 0 \) si \( x < 1 \) → fonction décroissante<br />
+    - \( f'(x) > 0 \) si \( x > 1 \) → fonction croissante<br />
+    Donc minimum en \( x = 1 \).
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 2 :</strong><br />
+  Soit \( f(x) = -x^2 + 2x + 3 \). Trouve les intervalles où la fonction est croissante ou décroissante.<br />
+  <textarea rows="4" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \( f'(x) = -2x + 2 \)<br />
+    \( f'(x) = 0 \Rightarrow x = 1 \)<br />
+    - Croissante sur \( ]-\infty, 1] \)<br />
+    - Décroissante sur \( [1, +\infty[ \)
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 3 :</strong><br />
+  Donne un exemple de fonction dont la dérivée est toujours négative. Explique ce que cela implique.<br />
+  <textarea rows="4" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    Exemple : \( f(x) = -x \), \( f'(x) = -1 < 0 \) partout.<br />
+    Cela signifie que la fonction est strictement décroissante sur \( \mathbb{R} \).
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 4 (quiz) :</strong><br />
+  Si \( f'(x) > 0 \) sur un intervalle, alors :<br />
+  <input type="radio" name="q4" id="q4a" value="a" /> <label for="q4a">La fonction est constante</label><br />
+  <input type="radio" name="q4" id="q4b" value="b" /> <label for="q4b">La fonction est décroissante</label><br />
+  <input type="radio" name="q4" id="q4c" value="c" /> <label for="q4c">La fonction est croissante</label><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La bonne réponse est : <strong>C)</strong> la fonction est croissante sur l’intervalle.
+  </div>
+</div>
+
+<script>
+  function toggleCorrection(button) {
+    const correctionDiv = button.nextElementSibling;
+    if (correctionDiv.style.display === 'block') {
+      correctionDiv.style.display = 'none';
+      button.textContent = 'Afficher la correction';
+    } else {
+      correctionDiv.style.display = 'block';
+      button.textContent = 'Cacher la correction';
+    }
+  }
+</script>
+
+</body>
+</html>
