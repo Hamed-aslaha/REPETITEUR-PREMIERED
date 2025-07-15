@@ -2,21 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Chapitre 6 : Étude des suites numériques</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; background: #fefefe; color: #222; line-height: 1.7; }
-    h1, h2 { color: #0056b3; }
-    .correction { display: none; background: #eef8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
-    .question { margin-top: 25px; }
-    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
-    button:hover { background-color: #0056b3; }
-    textarea { width: 100%; font-family: monospace; padding: 8px; }
-    label { cursor: pointer; }
-    pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
-    ul, li { margin-left: 20px; }
-  </style>
+  <title>Chapitre 6 : Suites numériques – Première D</title>
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- MathJax -->
+  <!-- Intégration MathJax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -24,102 +13,111 @@
 </head>
 <body>
 
-<h1>Chapitre 6 : Étude des suites numériques</h1>
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chapitre1.html">Chapitre 1</a></li>
+    <li><a href="chapitre2.html">Chapitre 2</a></li>
+    <li><a href="chapitre3.html">Chapitre 3</a></li>
+    <li><a href="chapitre4.html">Chapitre 4</a></li>
+    <li><a href="chapitre5.html">Chapitre 5</a></li>
+    <li><a href="chapitre6.html" class="active">Chapitre 6</a></li>
+    <li><a href="chapitre10.html">Chapitre 10</a></li>
+  </ul>
+</nav>
 
-<p><strong>Description :</strong></p>
-<p>
-Dans ce chapitre, nous étudierons les **suites numériques**, qui sont des suites de nombres indexées par les entiers naturels. Nous explorerons leur comportement de **convergence** ou de **divergence** en fonction de la limite, ainsi que les suites **croissantes** ou **décroissantes**. Vous apprendrez à appliquer les **critères de convergence** pour savoir si une suite converge ou diverge.
-</p>
+<header>
+  <h1>Chapitre 6 : Suites numériques</h1>
+</header>
 
-<h2>1. Définition d'une suite numérique</h2>
-<p>
-Une suite numérique est une fonction \( u : \mathbb{N} \to \mathbb{R} \), c'est-à-dire une fonction qui associe à chaque entier naturel \( n \) un réel \( u_n \). On note généralement la suite \( u_n \) ou \( (u_n) \), et les termes de la suite sont souvent appelés \( u_1, u_2, u_3, \dots \).
-</p>
+<main>
+  <h2>1. Définition d'une suite</h2>
+  <p>Une suite est une fonction définie sur \( \mathbb{N} \) (ou une partie de \( \mathbb{N} \)) qui associe à chaque entier un réel \( u_n \).</p>
+  <p>Il existe plusieurs façons de définir une suite :</p>
+  <ul>
+    <li><strong>Formule explicite :</strong> \( u_n = 2n + 1 \)</li>
+    <li><strong>Définition par récurrence :</strong> \( u_0 = 1 \), puis \( u_{n+1} = 2u_n \)</li>
+  </ul>
 
-<h2>2. Convergence et divergence</h2>
-<p>
-- Une suite \( (u_n) \) converge vers une limite \( L \) si \( \lim_{n \to \infty} u_n = L \).<br>
-- Une suite \( (u_n) \) diverge si elle n’a pas de limite finie, ce qui peut se traduire par \( \lim_{n \to \infty} u_n = \pm \infty \).
-</p>
+  <h2>2. Suites arithmétiques</h2>
+  <p>Une suite arithmétique est une suite telle que :</p>
+  <p>\[
+  u_{n+1} = u_n + r
+  \]</p>
+  <p>Formule explicite : \( u_n = u_0 + n \times r \)</p>
 
-<h3>Exemple :</h3>
-<p>La suite \( u_n = \frac{1}{n} \) converge vers \( 0 \) car \( \lim_{n \to \infty} \frac{1}{n} = 0 \).</p>
+  <h2>3. Suites géométriques</h2>
+  <p>Une suite géométrique est définie par :</p>
+  <p>\[
+  u_{n+1} = u_n \times q
+  \]</p>
+  <p>Formule explicite : \( u_n = u_0 \times q^n \)</p>
 
-<h2>3. Suites croissantes et décroissantes</h2>
-<p>
-- Une suite est **croissante** si \( u_{n+1} \geq u_n \) pour tout \( n \).<br>
-- Une suite est **décroissante** si \( u_{n+1} \leq u_n \) pour tout \( n \).
-</p>
+  <hr />
 
-<h3>Exemple :</h3>
-<p>La suite \( u_n = 2 - \frac{1}{n} \) est croissante, car \( u_{n+1} > u_n \) pour tout \( n \).</p>
+  <h2>Exercices interactifs</h2>
 
-<h2>4. Critères de convergence</h2>
-<p>
-- **Critère de Cauchy** : Une suite \( (u_n) \) converge si, pour tout \( \epsilon > 0 \), il existe \( N \) tel que pour tous \( m, n \geq N \), \( |u_n - u_m| < \epsilon \).
-- **Critère de la suite monotone bornée** : Toute suite monotone bornée converge.
-</p>
-
-<h2>5. Suite géométrique et arithmétique</h2>
-<p>
-- **Suite géométrique** : Une suite géométrique est de la forme \( u_n = u_0 \cdot r^n \), où \( r \) est la raison. Si \( |r| < 1 \), la suite converge vers \( 0 \).<br>
-- **Suite arithmétique** : Une suite arithmétique est de la forme \( u_n = u_0 + n \cdot r \), où \( r \) est la raison. La suite peut diverger selon la valeur de \( r \).
-</p>
-
-<hr>
-
-<h2>Exercices interactifs</h2>
-
-<div class="question">
-  <strong>Question 1 :</strong><br />
-  La suite \( u_n = \frac{3n + 1}{n + 2} \) est-elle convergente ? Si oui, quelle est sa limite ?<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    \[
-    \lim_{n \to \infty} \frac{3n + 1}{n + 2} = \lim_{n \to \infty} \frac{3 + \frac{1}{n}}{1 + \frac{2}{n}} = 3
-    \]
-    La suite converge vers \( 3 \).
+  <div class="question">
+    <strong>Question 1 :</strong><br />
+    Soit \( u_0 = 3 \) et \( u_{n+1} = u_n + 5 \).<br />
+    Détermine la formule explicite de \( u_n \).<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      Suite arithmétique de raison 5 :<br />
+      \( u_n = u_0 + n \times r = 3 + 5n \)
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 2 :</strong><br />
-  Soit \( u_n = 1 + \frac{2}{n} \). La suite est-elle croissante ou décroissante ?<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La suite est **décroissante**, car \( u_{n+1} < u_n \) pour tout \( n \).
+  <div class="question">
+    <strong>Question 2 :</strong><br />
+    Soit \( v_0 = 2 \) et \( v_{n+1} = 3v_n \).<br />
+    Trouve la formule explicite de \( v_n \).<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      Suite géométrique de raison 3 :<br />
+      \( v_n = 2 \times 3^n \)
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 3 :</strong><br />
-  Vérifie si la suite \( u_n = 5 + \frac{3}{n} \) est convergente, et calcule sa limite.<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    \[
-    \lim_{n \to \infty} \left( 5 + \frac{3}{n} \right) = 5
-    \]
-    La suite converge vers \( 5 \).
+  <div class="question">
+    <strong>Question 3 :</strong><br />
+    La suite définie par \( w_n = (-1)^n \) est-elle arithmétique, géométrique ou aucune des deux ? Justifie.<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      Cette suite n’est ni arithmétique (la différence entre deux termes n’est pas constante),<br />
+      ni géométrique (le rapport change de signe).<br />
+      Donc : aucune des deux.
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 4 (quiz) :</strong><br />
-  La suite \( u_n = 3^n \) est-elle convergente ou divergente ?<br />
-  <input type="radio" name="q4" id="q4a" /> <label for="q4a">Convergente</label><br />
-  <input type="radio" name="q4" id="q4b" /> <label for="q4b">Divergente</label><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La bonne réponse est : <strong>B)</strong> Divergente, car \( 3^n \to \infty \) lorsque \( n \to \infty \).
+  <div class="question">
+    <strong>Question 4 (quiz) :</strong><br />
+    Une suite géométrique de raison \( q > 1 \) est :<br />
+    <input type="radio" name="q4" id="q4a" /> <label for="q4a">Décroissante</label><br />
+    <input type="radio" name="q4" id="q4b" /> <label for="q4b">Constante</label><br />
+    <input type="radio" name="q4" id="q4c" /> <label for="q4c">Croissante</label><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      La bonne réponse est <strong>C)</strong> : si \( q > 1 \), la suite géométrique est croissante.
+    </div>
   </div>
-</div>
+
+  <div class="navigation">
+    <a href="chapitre5.html">Chapitre précédent : Équations différentielles</a>
+    <a href="index.html">Retour à l'accueil</a>
+    <a href="chapitre10.html">Chapitre suivant : Probabilités et statistiques</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 - HamedStudios</p>
+</footer>
 
 <script>
   function toggleCorrection(button) {
