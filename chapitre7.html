@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapitre 7 : Calcul intégral – Notion d’intégrale, propriétés et applications</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; background: #fefefe; color: #222; line-height: 1.7; }
+    h1, h2 { color: #0056b3; }
+    .correction { display: none; background: #eef8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
+    .question { margin-top: 25px; }
+    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
+    button:hover { background-color: #0056b3; }
+    textarea { width: 100%; font-family: monospace; padding: 8px; }
+    label { cursor: pointer; }
+    pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
+    ul, li { margin-left: 20px; }
+  </style>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<h1>Chapitre 7 : Calcul intégral – Notion d’intégrale, propriétés et applications</h1>
+
+<p><strong>Description :</strong></p>
+<p>
+Dans ce chapitre, nous explorons la **notion d’intégrale**, une des pierres angulaires du calcul. Vous apprendrez à calculer l’**intégrale définie**, à comprendre son lien avec la **dérivée** (théorème fondamental de l’analyse), et à appliquer l’intégrale pour résoudre des problèmes réels. Nous couvrirons également les **propriétés des intégrales** et des exemples d’**applications concrètes**.
+</p>
+
+<h2>1. Notion d'intégrale définie</h2>
+<p>
+L’intégrale définie d’une fonction \( f \) sur l’intervalle \( [a, b] \) est la somme des aires sous la courbe de \( f \) entre \( a \) et \( b \), et est notée :
+\[
+I = \int_a^b f(x) \, dx
+\]
+Elle représente l’aire entre la courbe de la fonction et l'axe des abscisses sur l'intervalle \( [a, b] \).
+</p>
+
+<h3>Exemple :</h3>
+<p>
+Calculons l’intégrale de \( f(x) = x^2 \) sur l’intervalle \( [0, 1] \) :
+\[
+I = \int_0^1 x^2 \, dx
+\]
+La primitive de \( x^2 \) est \( \frac{x^3}{3} \), donc :
+\[
+I = \left[ \frac{x^3}{3} \right]_0^1 = \frac{1^3}{3} - \frac{0^3}{3} = \frac{1}{3}
+\]
+</p>
+
+<h2>2. Le théorème fondamental de l'analyse</h2>
+<p>
+Le **théorème fondamental de l’analyse** relie la **dérivation** et l’**intégration**. Il stipule que si \( f \) est continue sur l’intervalle \( [a, b] \) et \( F \) est une primitive de \( f \), alors :
+\[
+\int_a^b f(x) \, dx = F(b) - F(a)
+\]
+Cela signifie que le calcul de l’intégrale d’une fonction peut être simplifié en trouvant une primitive.
+</p>
+
+<h2>3. Propriétés des intégrales</h2>
+<ul>
+  <li><strong>Linéarité</strong> : 
+    \[
+    \int_a^b (c f(x) + d g(x)) \, dx = c \int_a^b f(x) \, dx + d \int_a^b g(x) \, dx
+    \]
+  </li>
+  <li><strong>Invariance par changement de variable</strong> : Si \( u = g(x) \), alors :
+    \[
+    \int_a^b f(g(x)) g'(x) \, dx = \int_{g(a)}^{g(b)} f(u) \, du
+    \]
+  </li>
+  <li><strong>Propriétés de l’intégrale d’une fonction positive</strong> : Si \( f(x) \geq 0 \) sur \( [a, b] \), alors :
+    \[
+    \int_a^b f(x) \, dx \geq 0
+    \]
+  </li>
+</ul>
+
+<h2>4. Applications des intégrales</h2>
+<p>
+Les intégrales sont utilisées pour résoudre des problèmes dans divers domaines :
+- Calcul de l’**aire sous une courbe** (comme montré précédemment).
+- Calcul du **travail** effectué par une force : 
+  \[
+  W = \int_a^b F(x) \, dx
+  \]
+- Calcul de la **moyenne** d'une fonction sur un intervalle :
+  \[
+  \text{Moyenne} = \frac{1}{b - a} \int_a^b f(x) \, dx
+  \]
+</p>
+
+<hr>
+
+<h2>Exercices interactifs</h2>
+
+<div class="question">
+  <strong>Question 1 :</strong><br />
+  Calculez l’intégrale \( I = \int_0^2 (3x^2 + 4x) \, dx \).<br />
+  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La primitive de \( 3x^2 + 4x \) est \( x^3 + 2x^2 \), donc :
+    \[
+    I = \left[ x^3 + 2x^2 \right]_0^2 = (2^3 + 2 \times 2^2) - (0^3 + 2 \times 0^2) = 8 + 8 = 16
+    \]
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 2 :</strong><br />
+  Soit \( f(x) = x \cos(x) \). Calculez \( \int_0^\pi x \cos(x) \, dx \).<br />
+  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    Utilisez l’intégration par parties. On pose \( u = x \) et \( dv = \cos(x) dx \), donc \( du = dx \) et \( v = \sin(x) \).
+    \[
+    \int_0^\pi x \cos(x) \, dx = \left[ x \sin(x) \right]_0^\pi - \int_0^\pi \sin(x) \, dx
+    \]
+    Calculons chaque terme :
+    \[
+    \left[ x \sin(x) \right]_0^\pi = \pi \times 0 - 0 \times 0 = 0
+    \]
+    \[
+    \int_0^\pi \sin(x) \, dx = \left[ -\cos(x) \right]_0^\pi = 1 - (-1) = 2
+    \]
+    Donc, la réponse est \( 0 - 2 = -2 \).
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 3 :</strong><br />
+  Trouvez l'intégrale de \( f(x) = e^x \) sur l'intervalle \( [0, 1] \).<br />
+  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La primitive de \( e^x \) est \( e^x \), donc :
+    \[
+    I = \left[ e^x \right]_0^1 = e^1 - e^0 = e - 1
+    \]
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 4 (quiz) :</strong><br />
+  Quelle est la signification de l’intégrale \( \int_a^b f(x) \, dx \) ?<br />
+  <input type="radio" name="q4" id="q4a" /> <label for="q4a">L’aire sous la courbe de \( f(x) \) entre \( a \) et \( b \)</label><br />
+  <input type="radio" name="q4" id="q4b" /> <label for="q4b">La dérivée de \( f(x) \)</label><br />
+  <input type="radio" name="q4" id="q4c" /> <label for="q4c">La somme de tous les termes de la suite associée à \( f(x) \)</label><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La bonne réponse est : <strong>A)</strong> L’aire sous la courbe de \( f(x) \) entre \( a \) et \( b \).
+  </div>
+</div>
+
+<script>
+  function toggleCorrection(button) {
+    const correctionDiv = button.nextElementSibling;
+    if (correctionDiv.style.display === 'block') {
+      correctionDiv.style.display = 'none';
+      button.textContent = 'Afficher la correction';
+    } else {
+      correctionDiv.style.display = 'block';
+      button.textContent = 'Cacher la correction';
+    }
+  }
+</script>
+
+</body>
+</html>
