@@ -2,21 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Chapitre 9 : Les systèmes dynamiques – Introduction, stabilité et applications</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; background: #fefefe; color: #222; line-height: 1.7; }
-    h1, h2 { color: #0056b3; }
-    .correction { display: none; background: #eef8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
-    .question { margin-top: 25px; }
-    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
-    button:hover { background-color: #0056b3; }
-    textarea { width: 100%; font-family: monospace; padding: 8px; }
-    label { cursor: pointer; }
-    pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
-    ul, li { margin-left: 20px; }
-  </style>
+  <title>Chapitre 9 : Résolution graphique et algébrique d’équations – Première D</title>
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- MathJax -->
+  <!-- Intégration MathJax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -24,131 +13,127 @@
 </head>
 <body>
 
-<h1>Chapitre 9 : Les systèmes dynamiques – Introduction, stabilité et applications</h1>
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chapitre1.html">Chapitre 1</a></li>
+    <li><a href="chapitre2.html">Chapitre 2</a></li>
+    <li><a href="chapitre3.html">Chapitre 3</a></li>
+    <li><a href="chapitre4.html">Chapitre 4</a></li>
+    <li><a href="chapitre5.html">Chapitre 5</a></li>
+    <li><a href="chapitre6.html">Chapitre 6</a></li>
+    <li><a href="chapitre7.html">Chapitre 7</a></li>
+    <li><a href="chapitre8.html">Chapitre 8</a></li>
+    <li><a href="chapitre9.html" class="active">Chapitre 9</a></li>
+    <li><a href="chapitre10.html">Chapitre 10</a></li>
+  </ul>
+</nav>
 
-<p><strong>Description :</strong></p>
-<p>
-Les **systèmes dynamiques** sont un ensemble d'outils mathématiques utilisés pour étudier des systèmes qui évoluent au fil du temps. Ce chapitre présente les bases des systèmes dynamiques, y compris leur **stabilité**, les **attracteurs** et les **oscillations**, et comment ces phénomènes peuvent être observés dans des systèmes réels, tels que la météo, l'économie, ou encore la dynamique des populations.
-</p>
+<header>
+  <h1>Chapitre 9 : Résolution graphique et algébrique d’équations</h1>
+</header>
 
-<h2>1. Introduction aux systèmes dynamiques</h2>
-<p>
-Un **système dynamique** est un système qui évolue au cours du temps selon des règles spécifiques. Ces systèmes sont souvent modélisés par des **équations différentielles**, qui déterminent comment les variables du système changent par rapport au temps.
-</p>
+<main>
+  <h2>1. Résolution graphique</h2>
+  <p>
+    Pour résoudre une équation du type \( f(x) = g(x) \) graphiquement, on trace les courbes de \( f \) et de \( g \) sur le même repère.
+  </p>
+  <p>
+    Les abscisses des points d’intersection correspondent aux solutions de l’équation.
+  </p>
 
-<h3>Exemple :</h3>
-Un exemple simple est le modèle de **croissance exponentielle** d'une population, qui est décrit par l’équation :
-\[
-\frac{dP}{dt} = rP
-\]
-Où :
-- \( P(t) \) est la population à l'instant \( t \),
-- \( r \) est le taux de croissance de la population.
+  <h3>Exemple :</h3>
+  <p>Résoudre graphiquement \( x^2 = 2x + 3 \).</p>
+  <p>
+    On trace les courbes de \( f(x) = x^2 \) et \( g(x) = 2x + 3 \). Les points d'intersection donnent les solutions.
 
-La solution de cette équation est \( P(t) = P_0 e^{rt} \), où \( P_0 \) est la population initiale.
+  </p>
 
-<h2>2. Stabilité et points fixes</h2>
-<p>
-Dans un système dynamique, un **point fixe** ou **point d'équilibre** est une valeur de la variable du système pour laquelle la dérivée est nulle. Ces points peuvent être **stables** ou **instables** :
-<ul>
-  <li><strong>Point stable :</strong> Si le système est perturbé autour du point fixe, il revient à ce point avec le temps.</li>
-  <li><strong>Point instable :</strong> Si le système est perturbé, il s’éloigne du point fixe.</li>
-</ul>
+  <h2>2. Résolution algébrique</h2>
+  <p>
+    On transforme l’équation \( f(x) = g(x) \) en \( f(x) - g(x) = 0 \).
+  </p>
+  <p>
+    Puis on résout l’équation obtenue en utilisant les méthodes classiques (développement, mise en facteur, etc.).
+  </p>
 
-<h3>Exemple :</h3>
-Considérons l'équation suivante, qui modélise la dynamique d'une population avec des limites :
-\[
-\frac{dP}{dt} = rP(1 - \frac{P}{K})
-\]
-Où \( K \) est la capacité porteuse de l'environnement. Les points fixes de cette équation sont \( P = 0 \) et \( P = K \). Le point \( P = 0 \) est instable (si \( P \) est légèrement perturbé, il grandira rapidement), tandis que \( P = K \) est stable (si \( P \) approche de \( K \), il reste proche de cette valeur).
-
-<h2>3. Comportement chaotique</h2>
-<p>
-Un phénomène intéressant dans les systèmes dynamiques est le **chaos**, un comportement qui semble aléatoire et imprévisible, même si le système est déterministe. Les systèmes chaotiques sont très sensibles aux conditions initiales, un phénomène appelé **effet papillon**.
-</p>
-
-<h3>Exemple :</h3>
-Un exemple classique de système chaotique est l'**attracteur de Lorenz**, qui est décrit par le système d’équations différentielles :
-\[
-\frac{dx}{dt} = \sigma(y - x), \quad \frac{dy}{dt} = x(\rho - z) - y, \quad \frac{dz}{dt} = xy - \beta z
-\]
-Ce système modélise la convection thermique dans l'atmosphère et montre un comportement chaotique, avec des trajectoires qui ne se répètent jamais et dépendent fortement des conditions initiales.
-
-<h2>4. Attracteurs et systèmes non linéaires</h2>
-<p>
-Un **attracteur** est un ensemble de points vers lequel un système évolue au fil du temps. Il peut être un point fixe, un cycle limite, ou même une trajectoire chaotique. Les **systèmes non linéaires** sont ceux qui présentent des comportements complexes comme des oscillations, des bifurcations, et parfois du chaos.
-</p>
-
-<h3>Exemple :</h3>
-Un exemple simple d’attracteur est le **pendule amorti**. Si on prend en compte la résistance de l'air, l'équation du mouvement peut être décrite par :
-\[
-\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \sin(\theta) = 0
-\]
-Ce système montre un **attracteur stable** au point où la vitesse et l'amplitude du pendule deviennent nulles (le pendule reste en position d'équilibre).
-
-<h2>5. Applications des systèmes dynamiques</h2>
-<p>
-Les systèmes dynamiques trouvent des applications dans de nombreux domaines :
-<ul>
-  <li><strong>Modélisation climatique :</strong> Les équations différentielles sont utilisées pour prédire l'évolution du climat sur de longues périodes.</li>
-  <li><strong>Biologie :</strong> Les systèmes dynamiques modélisent la croissance des populations et l’interaction entre différentes espèces.</li>
-  <li><strong>Économie :</strong> Les modèles économiques sont souvent basés sur des systèmes dynamiques pour analyser les cycles économiques et les fluctuations des marchés.</li>
-  <li><strong>Physique :</strong> Les systèmes dynamiques sont utilisés pour comprendre des phénomènes comme la mécanique quantique, les circuits électriques et la dynamique des fluides.</li>
-</ul>
-
-<hr>
-
-<h2>Exercices interactifs</h2>
-
-<div class="question">
-  <strong>Question 1 :</strong><br />
-  Résoudre l'équation \( \frac{dP}{dt} = 2P(1 - \frac{P}{100}) \) pour \( P(0) = 10 \).<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La solution générale de l'équation est \( P(t) = \frac{100}{1 + \frac{90}{10} e^{-2t}} \). 
-    L’application de la condition initiale \( P(0) = 10 \) permet de déterminer la constante de l'intégration.
-  </div>
-</div>
-
-<div class="question">
-  <strong>Question 2 :</strong><br />
-  Donne les points fixes du système dynamique suivant :
+  <h3>Exemple :</h3>
+  <p>Résoudre \( x^2 = 2x + 3 \) :</p>
+  <p>
   \[
-  \frac{dx}{dt} = 4x(1 - \frac{x}{2})
+  x^2 - 2x - 3 = 0
   \]
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    Les points fixes sont obtenus en résolvant \( 4x(1 - \frac{x}{2}) = 0 \). Cela donne \( x = 0 \) et \( x = 2 \).
-  </div>
-</div>
+  \[
+  (x - 3)(x + 1) = 0
+  \Rightarrow x = 3 \text{ ou } x = -1
+  \]
+  </p>
 
-<div class="question">
-  <strong>Question 3 :</strong><br />
-  Dans un système chaotique, qu’est-ce que l’effet papillon ?<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    L'effet papillon est la sensibilité d'un système chaotique aux conditions initiales. Même une petite variation au départ peut entraîner des différences significatives dans le comportement du système à long terme.
-  </div>
-</div>
+  <hr />
 
-<div class="question">
-  <strong>Question 4 (quiz) :</strong><br />
-  Dans quel domaine les systèmes dynamiques sont-ils utilisés pour étudier les cycles économiques ?<br />
-  <input type="radio" name="q4" id="q4a" /> <label for="q4a">Physique</label><br />
-  <input type="radio" name="q4" id="q4b" /> <label for="q4b">Biologie</label><br />
-  <input type="radio" name="q4" id="q4c" /> <label for="q4c">Économie</label><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La bonne réponse est : <strong>C)</strong> Économie.
+  <h2>Exercices interactifs</h2>
+
+  <div class="question">
+    <strong>Question 1 :</strong><br />
+    Résous algébriquement : \( x^2 + x - 6 = 0 \)<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      \[
+      x^2 + x - 6 = (x - 2)(x + 3) = 0
+      \Rightarrow x = 2 \text{ ou } x = -3
+      \]
+    </div>
   </div>
-</div>
+
+  <div class="question">
+    <strong>Question 2 :</strong><br />
+    Trouve les solutions graphiques de \( f(x) = x^2 \) et \( g(x) = 4 \).<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      On cherche \( x \) tel que \( x^2 = 4 \).<br />
+      \[
+      x = \pm 2
+      \]
+      Donc les courbes se croisent en \( x = -2 \) et \( x = 2 \).
+    </div>
+  </div>
+
+  <div class="question">
+    <strong>Question 3 :</strong><br />
+    Résous \( x^2 - 9 = 0 \) algébriquement.<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      \[
+      x^2 - 9 = 0 \Rightarrow (x - 3)(x + 3) = 0 \Rightarrow x = 3 \text{ ou } x = -3
+      \]
+    </div>
+  </div>
+
+  <div class="question">
+    <strong>Question 4 (quiz) :</strong><br />
+    Une solution de l'équation \( x^2 = 5 \) est :<br />
+    <input type="radio" name="q4" id="q4a" /> <label for="q4a">x = 5</label><br />
+    <input type="radio" name="q4" id="q4b" /> <label for="q4b">x = \(\sqrt{5}\) ou \(-\sqrt{5}\)</label><br />
+    <input type="radio" name="q4" id="q4c" /> <label for="q4c">x = 2.5</label><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      Réponse correcte : <strong>B)</strong> \( x = \sqrt{5} \) ou \( x = -\sqrt{5} \)
+    </div>
+  </div>
+
+  <div class="navigation">
+    <a href="chapitre8.html">Chapitre précédent : Suites arithmétiques et géométriques</a>
+    <a href="index.html">Retour à l'accueil</a>
+    <a href="chapitre10.html">Chapitre suivant : Probabilités et statistiques</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 - HamedStudios</p>
+</footer>
 
 <script>
   function toggleCorrection(button) {
