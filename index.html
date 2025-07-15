@@ -2,257 +2,160 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Programme Maths Première D</title>
+  <title>Cours et Exercices Dérivation - Première D</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
-    nav { background: #34495e; padding: 10px; display: flex; justify-content: center; gap: 15px; }
-    nav a { color: white; text-decoration: none; font-weight: bold; }
-    section { background: white; margin: 20px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    h2 { border-bottom: 2px solid #ccc; color: #2c3e50; }
-    h3 { color: #34495e; }
-    pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
-    ul { padding-left: 20px; }
+    body { font-family: Arial, sans-serif; max-width: 750px; margin: 30px auto; padding: 0 15px; line-height: 1.6; color: #222; }
+    h1, h2 { color: #0056b3; }
+    .correction { display: none; background: #f0f8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
+    .question { margin-top: 25px; }
+    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
+    button:hover { background-color: #0056b3; }
+    textarea { width: 100%; font-family: monospace; padding: 8px; }
+    label { cursor: pointer; }
   </style>
+
+  <!-- Intégration de MathJax pour les formules -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
-<header>
-  <h1>Programme de Mathématiques – Première D</h1>
-  <p>Cours complet + Exercices corrigés</p>
-</header>
+<h1>Chapitre 1 : Notion de taux de variation et dérivée</h1>
 
-<nav>
-  <a href="#analyse">Analyse</a>
-  <a href="#algebre">Algèbre</a>
-  <a href="#geometrie">Géométrie</a>
-  <a href="#probas">Probabilités</a>
-  <a href="#algo">Algorithmique</a>
-</nav>
+<h2>1. Le taux de variation</h2>
+<p>
+Le taux de variation d'une fonction \( f \) entre deux points \( x \) et \( x + h \) est donné par la formule :
+</p>
+<p>\[ TV = \frac{f(x + h) - f(x)}{h} \]</p>
+<p>
+Ce rapport mesure la vitesse de changement de la fonction entre ces deux points.
+</p>
 
-<main>
+<h3>Exemple :</h3>
+<p>Pour \( f(x) = x^2 \), calcule le taux de variation entre \( x = 1 \) et \( x = 1 + h \) :</p>
+<p>
+\[
+\begin{align*}
+f(1) &= 1^2 = 1 \\
+f(1 + h) &= (1 + h)^2 = 1 + 2h + h^2 \\
+TV &= \frac{f(1 + h) - f(1)}{h} = \frac{1 + 2h + h^2 - 1}{h} = \frac{2h + h^2}{h} = 2 + h
+\end{align*}
+\]
+</p>
+<p>Quand \( h \) est très petit, \( TV \approx 2 \).</p>
 
-<!-- CHAPITRE 1 : ANALYSE -->
-<section id="analyse">
-  <h2>Chapitre 1 : Analyse</h2>
-  <h3>1.1 – Notion de fonction</h3>
-  <p>Une fonction associe à chaque valeur de <code>x</code> une seule valeur <code>f(x)</code>. Ex : <code>f(x) = x² + 2</code>.</p>
+<h2>2. Définition de la dérivée</h2>
+<p>
+La dérivée \( f'(x) \) est la limite du taux de variation lorsque \( h \to 0 \) :
+</p>
+<p>\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]</p>
+<p>Cela correspond à la pente de la tangente à la courbe au point \( x \).</p>
 
-  <h3>1.2 – Représentation graphique</h3>
-  <p>On trace les points <code>(x, f(x))</code>. Une parabole correspond à <code>x²</code>, une droite à <code>ax + b</code>, etc.</p>
+<h3>Exemple :</h3>
+<p>Pour \( f(x) = x^2 \) :</p>
+<p>
+\[
+\begin{align*}
+f'(x) &= \lim_{h \to 0} \frac{(x + h)^2 - x^2}{h} \\
+&= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} \\
+&= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
+&= \lim_{h \to 0} (2x + h) = 2x
+\end{align*}
+\]
+</p>
 
-  <h3>1.3 – Variations</h3>
-  <ul>
-    <li>Croissante si <code>f(x₁) &lt; f(x₂)</code> quand <code>x₁ &lt; x₂</code>.</li>
-    <li>Décroissante si <code>f(x₁) &gt; f(x₂)</code>.</li>
-  </ul>
+<h2>3. Interprétation géométrique</h2>
+<ul>
+  <li>Si \( f'(x) > 0 \), la fonction est croissante au voisinage de \( x \).</li>
+  <li>Si \( f'(x) < 0 \), la fonction est décroissante au voisinage de \( x \).</li>
+  <li>Si \( f'(x) = 0 \), on peut avoir un maximum, un minimum ou un point d'inflexion.</li>
+</ul>
 
-  <h3>1.4 – Limites et continuité</h3>
-  <p>On écrit : <code>lim<sub>x→a</sub> f(x) = L</code>.</p>
+<hr />
 
-  <h3>1.5 – Dérivation</h3>
-  <ul>
-    <li><code>(xⁿ)' = n·xⁿ⁻¹</code></li>
-    <li><code>(u+v)' = u' + v'</code></li>
-    <li><code>(uv)' = u'v + uv'</code></li>
-    <li><code>(u/v)' = (u'v − uv') / v²</code></li>
-  </ul>
+<h2>Exercices interactifs</h2>
 
-  <h3>1.6 – Tangente</h3>
-  <p><code>y = f′(x₀)(x − x₀) + f(x₀)</code> est l’équation de la tangente au point <code>x₀</code>.</p>
+<div class="question">
+  <strong>Question 1 :</strong><br />
+  Soit la fonction \( f(x) = 2x + 3 \).<br />
+  Calcule le taux de variation entre \( x = 4 \) et \( x = 4 + h \).<br />
+  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \( f(4) = 2 \times 4 + 3 = 11 \)<br />
+    \( f(4+h) = 2(4+h) + 3 = 11 + 2h \)<br />
+    \( TV = \frac{f(4+h) - f(4)}{h} = \frac{2h}{h} = 2 \)
+  </div>
+</div>
 
-  <h3>Exercices corrigés</h3>
-  <pre>
-Exercice 1 : f(x) = 3x² − 2x + 1
-→ f′(x) = 6x − 2 ; f(1) = 2 ; f′(1) = 4
-Tangente : y = 4(x − 1) + 2 = 4x − 2
+<div class="question">
+  <strong>Question 2 :</strong><br />
+  Trouve la dérivée \( f'(x) \) de la fonction \( f(x) = x^2 \).<br />
+  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \( f'(x) = \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} = \lim_{h \to 0} (2x + h) = 2x \)
+  </div>
+</div>
 
-Exercice 2 : f(x) = −x² + 4x
-→ f′(x) = −2x + 4 → max en x=2 → croissante [0,2], décroissante [2,∞[
+<div class="question">
+  <strong>Question 3 :</strong><br />
+  Calcule la dérivée de \( f(x) = 3x^3 \).<br />
+  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La dérivée de \( x^3 \) est \( 3x^2 \), donc :<br />
+    \( f'(x) = 3 \times 3x^2 = 9x^2 \)
+  </div>
+</div>
 
-Exercice 3 : f(x) = 1/x
-→ décroissante, asymptotes en x=0 et y=0
+<div class="question">
+  <strong>Question 4 (quiz) :</strong><br />
+  Quelle est la dérivée de la fonction constante \( f(x) = 7 \) ?<br />
+  <input type="radio" name="q4" id="q4a" value="7" /> <label for="q4a">7</label><br />
+  <input type="radio" name="q4" id="q4b" value="0" /> <label for="q4b">0</label><br />
+  <input type="radio" name="q4" id="q4c" value="x" /> <label for="q4c">x</label><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La dérivée d’une constante est toujours 0, donc la bonne réponse est <strong>B)</strong>.
+  </div>
+</div>
 
-Exercice 4 : f(x) = (x² − 1)/(x − 1) = x + 1 si x ≠ 1
-→ lim(x→1) = 2
+<div class="question">
+  <strong>Question 5 :</strong><br />
+  Soit \( f(x) = \frac{1}{x} \).<br />
+  Calcule le taux de variation entre \( x = 1 \) et \( x = 1 + h \).<br />
+  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \( f(1) = 1 \)<br />
+    \( f(1+h) = \frac{1}{1+h} \)<br />
+    \[
+    TV = \frac{\frac{1}{1+h} - 1}{h} = \frac{-1}{1+h}
+    \]
+    Quand \( h \to 0 \), \( TV \to -1 \). Donc \( f'(1) = -1 \).
+  </div>
+</div>
 
-Exercice 5 : f(x) = (x² + 1)/x
-→ f′(x) = (x²−1)/x²
-  </pre>
-</section>
+<script>
+  function toggleCorrection(button) {
+    const correctionDiv = button.nextElementSibling;
+    if (correctionDiv.style.display === 'block') {
+      correctionDiv.style.display = 'none';
+      button.textContent = 'Afficher la correction';
+    } else {
+      correctionDiv.style.display = 'block';
+      button.textContent = 'Cacher la correction';
+    }
+  }
+</script>
 
-<!-- CHAPITRE 2 : ALGEBRE -->
-<section id="algebre">
-  <h2>Chapitre 2 : Algèbre</h2>
-
-  <h3>2.1 – Identités remarquables</h3>
-  <ul>
-    <li><code>(a + b)² = a² + 2ab + b²</code></li>
-    <li><code>(a − b)² = a² − 2ab + b²</code></li>
-    <li><code>(a + b)(a − b) = a² − b²</code></li>
-  </ul>
-
-  <h3>2.2 – Équations du second degré</h3>
-  <p><code>ax² + bx + c = 0</code> → Δ = b² − 4ac → racines : <code>x = (−b ± √Δ)/2a</code></p>
-
-  <h3>2.3 – Systèmes</h3>
-  <p>On utilise substitution, combinaison ou égalisation.</p>
-
-  <h3>2.4 – Inéquations</h3>
-  <p>Utilisation du signe du produit ou quotient, tableaux de signes.</p>
-
-  <h3>Exercices corrigés</h3>
-  <pre>
-Exercice 1 : (2x−3)²
-= 4x² − 12x + 9
-
-Exercice 2 : x² − 5x + 6 = 0
-Δ = 25 − 24 = 1 → x = (5±1)/2 = 2 ou 3
-
-Exercice 3 :
-x + y = 5
-2x − y = 4
-→ y = 5 − x ; 2x − (5−x) = 4 → x = 3, y = 2
-
-Exercice 4 : x² − 4 > 0
-→ (x − 2)(x + 2) > 0
-→ x ∈ (−∞, −2) ∪ (2, ∞)
-  </pre>
-</section>
-
-<!-- CHAPITRE 3 : GEOMETRIE -->
-<section id="geometrie">
-  <h2>Chapitre 3 : Géométrie</h2>
-
-  <h3>3.1 – Vecteurs</h3>
-  <ul>
-    <li>→AB = (xB − xA, yB − yA)</li>
-    <li>Vecteurs égaux : même direction, sens, norme</li>
-  </ul>
-
-  <h3>3.2 – Coordonnées et repère</h3>
-  <p>On travaille dans un repère orthonormé (O, i, j)</p>
-
-  <h3>3.3 – Droites</h3>
-  <p>Équation : <code>y = ax + b</code></p>
-
-  <h3>3.4 – Produit scalaire</h3>
-  <p><code>→u · →v = x₁x₂ + y₁y₂</code></p>
-
-  <h3>Exercices corrigés</h3>
-  <pre>
-Exercice 1 : A(1,2), B(4,6)
-→AB = (3,4)
-
-Exercice 2 :
-Droite passant par (1,2), pente = 2
-→ y = 2x → vérifie le point
-
-Exercice 3 :
-→u = (2,−1), →v = (−1,3)
-→ u·v = −2 − 3 = −5
-  </pre>
-</section>
-
-<!-- CHAPITRE 4 : PROBABILITES -->
-<section id="probas">
-  <h2>Chapitre 4 : Probabilités</h2>
-
-  <h3>4.1 – Événements</h3>
-  <p>Univers, événements élémentaires, événement certain, impossible.</p>
-
-  <h3>4.2 – Probabilité</h3>
-  <p><code>P(A) = nombre d’issues favorables / total</code></p>
-
-  <h3>4.3 – Union / intersection</h3>
-  <p><code>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</code></p>
-
-  <h3>4.4 – Arbres de probabilité</h3>
-  <p>Représentation graphique des cas possibles.</p>
-
-  <h3>4.5 – Probabilité conditionnelle</h3>
-  <p><code>P(B|A) = P(A ∩ B) / P(A)</code></p>
-
-  <h3>Exercices corrigés</h3>
-  <pre>
-Exercice 1 : 3 boules rouges sur 5
-→ P(rouge) = 3/5
-
-Exercice 2 : A={2,4,6}, B={5,6}
-→ A ∪ B = {2,4,5,6} → P = 4/6 = 2/3
-
-Exercice 3 :
-P(garçon) = 0.6 ; P(lunettes|garçon) = 0.3
-→ P(garçon ∩ lunettes) = 0.6 × 0.3 = 0.18
-  </pre>
-</section>
-
-<!-- CHAPITRE 5 : ALGORITHMIQUE -->
-<section id="algo">
-  <h2>Chapitre 5 : Algorithmique</h2>
-
-  <h3>5.1 – Notions de base</h3>
-  <p>Un algorithme est une suite d’instructions (variables, tests, boucles).</p>
-
-  <h3>5.2 – Variables et affectation</h3>
-  <pre>
-a ← 5
-b ← a + 3 → b = 8
-  </pre>
-
-  <h3>5.3 – Instructions conditionnelles</h3>
-  <pre>
-SI a > b ALORS
-   AFFICHER a
-SINON
-   AFFICHER b
-FINSI
-  </pre>
-
-  <h3>5.4 – Boucles</h3>
-  <pre>
-POUR i DE 1 À 10 FAIRE
-   AFFICHER i
-FIN POUR
-
-TANT QUE x > 0 FAIRE
-   x ← x − 1
-FIN TANT QUE
-  </pre>
-
-  <h3>5.5 – Fonctions</h3>
-  <pre>
-FONCTION carre(x)
-   RETOURNER x × x
-FIN FONCTION
-  </pre>
-
-  <h3>Exercices corrigés</h3>
-  <pre>
-Exercice 1 : Somme 1 à 100
-somme ← 0
-POUR i DE 1 À 100 FAIRE
-   somme ← somme + i
-FIN POUR
-→ Résultat : 5050
-
-Exercice 2 : Factorielle de 5
-fact ← 1
-POUR i DE 1 À 5 FAIRE
-   fact ← fact × i
-FIN POUR
-→ Résultat : 120
-
-Exercice 3 : Max de 3 nombres
-LIRE a, b, c
-SI a ≥ b ET a ≥ c → max ← a
-SINON SI b ≥ c → max ← b
-SINON → max ← c
-AFFICHER max
-  </pre>
-</section>
-
-</main>
 </body>
 </html>
