@@ -14,6 +14,27 @@
     label { cursor: pointer; }
     pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
     ul, li { margin-left: 20px; }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #0056b3;
+      margin-bottom: 30px;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      font-size: 16px;
+    }
+    nav a:hover {
+      background-color: #007BFF;
+      border-radius: 4px;
+    }
   </style>
 
   <!-- MathJax -->
@@ -24,155 +45,177 @@
 </head>
 <body>
 
-<h1>Chapitre 10 : Matrices et systèmes linéaires – Introduction, méthodes de résolution et applications</h1>
+<!-- Barre de navigation fixe -->
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chapitre1.html">Chapitre 1</a></li>
+    <li><a href="chapitre2.html">Chapitre 2</a></li>
+    <li><a href="chapitre3.html">Chapitre 3</a></li>
+    <li><a href="chapitre4.html">Chapitre 4</a></li>
+    <li><a href="chapitre5.html">Chapitre 5</a></li>
+    <li><a href="chapitre10.html">Chapitre 10</a></li>
+    <!-- Ajoute d'autres chapitres ici -->
+  </ul>
+</nav>
 
-<p><strong>Description :</strong></p>
-<p>
-Dans ce chapitre, nous étudions les **matrices**, qui sont des objets mathématiques utilisés pour représenter des systèmes linéaires, des transformations et des données complexes. Nous aborderons les **méthodes de résolution** de systèmes linéaires, ainsi que des applications pratiques dans des domaines comme l'algèbre, l'informatique, l'économie et l'ingénierie.
-</p>
+<header>
+  <h1>Chapitre 10 : Matrices et systèmes linéaires – Introduction, méthodes de résolution et applications</h1>
+</header>
 
-<h2>1. Introduction aux matrices</h2>
-<p>
-Une **matrice** est un tableau rectangulaire de nombres, organisés en lignes et en colonnes. Les matrices sont souvent utilisées pour résoudre des systèmes linéaires ou représenter des transformations géométriques.
-</p>
+<main>
+  <h2>1. Introduction aux matrices</h2>
+  <p>
+    Une **matrice** est un tableau rectangulaire de nombres, organisés en lignes et en colonnes. Les matrices sont souvent utilisées pour résoudre des systèmes linéaires ou représenter des transformations géométriques.
+  </p>
 
-<h3>Exemple :</h3>
-Voici une matrice \( A \) de taille \( 2 \times 3 \) :
-\[
-A = \begin{pmatrix} 
-1 & 2 & 3 \\
-4 & 5 & 6 
-\end{pmatrix}
-\]
-Les éléments de la matrice \( A \) sont appelés **éléments de la matrice**, et chaque élément est référencé par son indice de ligne et de colonne.
-
-<h2>2. Matrices inverses</h2>
-<p>
-La **matrice inverse** d'une matrice \( A \), notée \( A^{-1} \), est la matrice qui, multipliée par \( A \), donne la matrice identité \( I \) (où \( I \) est une matrice carrée de taille \( n \times n \) avec des 1 sur la diagonale et des 0 ailleurs).
-</p>
-Une matrice carrée \( A \) est inversible si et seulement si son **déterminant** est non nul.
-
-<h3>Exemple :</h3>
-Si \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \), alors la matrice inverse \( A^{-1} \) est donnée par :
-\[
-A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
-\]
-Où \( a, b, c, d \) sont les éléments de \( A \). Le déterminant de \( A \) est \( \text{det}(A) = ad - bc \).
-
-<h2>3. Résolution des systèmes linéaires</h2>
-<p>
-Un **système linéaire** est un ensemble d'équations linéaires que l'on cherche à résoudre. Par exemple, un système de deux équations à deux inconnues :
-\[
-\begin{aligned}
-x + 2y &= 5 \\
-3x - y &= 7
-\end{aligned}
-\]
-Ce système peut être résolu par **méthodes directes** comme l'**élimination de Gauss** ou la **méthode de substitution**, ou en utilisant les matrices.
-
-<h3>Exemple :</h3>
-On représente le système linéaire par une matrice :
-\[
-A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 5 \\ 7 \end{pmatrix}
-\]
-La solution du système est donnée par \( X = A^{-1} B \), où \( X = \begin{pmatrix} x \\ y \end{pmatrix} \).
-
-<h2>4. Le déterminant d'une matrice</h2>
-<p>
-Le **déterminant** d'une matrice carrée est un nombre qui peut être utilisé pour déterminer si une matrice est inversible. Si le déterminant est nul, la matrice n'a pas d'inverse.
-</p>
-Pour une matrice \( 2 \times 2 \) :
-\[
-A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
-\]
-Le déterminant de \( A \) est donné par :
-\[
-\text{det}(A) = ad - bc
-\]
-
-<h2>5. Applications des matrices et des systèmes linéaires</h2>
-<p>
-Les matrices et les systèmes linéaires ont de nombreuses applications dans différents domaines :
-<ul>
-  <li><strong>Informatique :</strong> Les matrices sont utilisées pour des transformations dans la programmation graphique, les réseaux neuronaux et les algorithmes de traitement d'images.</li>
-  <li><strong>Économie :</strong> Les matrices sont utilisées dans les modèles économiques pour représenter les relations entre les différentes variables économiques.</li>
-  <li><strong>Ingénierie :</strong> Dans la mécanique des structures, les matrices permettent de résoudre les équations de déformation et de contrainte dans les matériaux.</li>
-  <li><strong>Physique :</strong> Les matrices sont utilisées pour résoudre les équations qui décrivent les systèmes quantiques et les phénomènes physiques complexes.</li>
-</ul>
-
-<hr>
-
-<h2>Exercices interactifs</h2>
-
-<div class="question">
-  <strong>Question 1 :</strong><br />
-  Résoudre le système linéaire suivant à l'aide de la méthode des matrices :
-  \[
-  \begin{aligned}
-  x + 2y &= 8 \\
-  3x - y &= 7
-  \end{aligned}
-  \]<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La matrice associée au système est :
+  <h3>Exemple :</h3>
+  <p>Voici une matrice \( A \) de taille \( 2 \times 3 \) :</p>
+  <p>
     \[
-    A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 8 \\ 7 \end{pmatrix}
+    A = \begin{pmatrix} 
+    1 & 2 & 3 \\
+    4 & 5 & 6 
+    \end{pmatrix}
     \]
-    La solution est \( X = A^{-1}B \). La solution est \( x = 3 \) et \( y = 2 \).
-  </div>
-</div>
+  </p>
+  <p>Les éléments de la matrice \( A \) sont appelés **éléments de la matrice**, et chaque élément est référencé par son indice de ligne et de colonne.</p>
 
-<div class="question">
-  <strong>Question 2 :</strong><br />
-  Calculer le déterminant de la matrice suivante :
-  \[
-  A = \begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}
-  \]<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    Le déterminant de \( A \) est donné par :
+  <h2>2. Matrices inverses</h2>
+  <p>
+    La **matrice inverse** d'une matrice \( A \), notée \( A^{-1} \), est la matrice qui, multipliée par \( A \), donne la matrice identité \( I \).
+  </p>
+  <h3>Exemple :</h3>
+  <p>Si \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \), alors la matrice inverse \( A^{-1} \) est donnée par :</p>
+  <p>
     \[
-    \text{det}(A) = 4 \times 3 - 2 \times 1 = 12 - 2 = 10
+    A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
     \]
-  </div>
-</div>
+  </p>
+  <p>Où \( a, b, c, d \) sont les éléments de \( A \). Le déterminant de \( A \) est \( \text{det}(A) = ad - bc \).</p>
 
-<div class="question">
-  <strong>Question 3 :</strong><br />
-  Trouver l'inverse de la matrice \( A = \begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix} \).<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La matrice inverse est donnée par :
+  <h2>3. Résolution des systèmes linéaires</h2>
+  <p>
+    Un **système linéaire** est un ensemble d'équations linéaires que l'on cherche à résoudre. Voici un exemple de système de deux équations à deux inconnues :
+  </p>
+  <p>
     \[
-    A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} 5 & -3 \\ -2 & 1 \end{pmatrix}
+    \begin{aligned}
+    x + 2y &= 5 \\
+    3x - y &= 7
+    \end{aligned}
     \]
-    Le déterminant de \( A \) est \( \text{det}(A) = 1 \times 5 - 3 \times 2 = -1 \).
-    La matrice inverse est :
-    \[
-    A^{-1} = \begin{pmatrix} -5 & 3 \\ 2 & -1 \end{pmatrix}
-    \]
-  </div>
-</div>
+  </p>
+  <p>Ce système peut être résolu par des méthodes directes comme l'**élimination de Gauss** ou la **méthode de substitution**, ou en utilisant les matrices.</p>
 
-<div class="question">
-  <strong>Question 4 (quiz) :</strong><br />
-  Quelle est la condition nécessaire pour qu'une matrice soit inversible ?<br />
-  <input type="radio" name="q4" id="q4a" /> <label for="q4a">Le déterminant doit être nul.</label><br />
-  <input type="radio" name="q4" id="q4b" /> <label for="q4b">Le déterminant doit être non nul.</label><br />
-  <input type="radio" name="q4" id="q4c" /> <label for="q4c">La matrice doit être carrée.</label><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La bonne réponse est : <strong>B)</strong> Le déterminant doit être non nul.
+  <h2>4. Le déterminant d'une matrice</h2>
+  <p>
+    Le **déterminant** d'une matrice carrée est un nombre qui peut être utilisé pour déterminer si une matrice est inversible.
+  </p>
+  <p>Pour une matrice \( 2 \times 2 \) :</p>
+  <p>
+    \[
+    A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+    \]
+  </p>
+  <p>Le déterminant de \( A \) est donné par :</p>
+  <p>
+    \[
+    \text{det}(A) = ad - bc
+    \]
+  </p>
+
+  <h2>5. Applications des matrices et des systèmes linéaires</h2>
+  <ul>
+    <li><strong>Informatique :</strong> Les matrices sont utilisées pour des transformations dans la programmation graphique, les réseaux neuronaux, etc.</li>
+    <li><strong>Économie :</strong> Les matrices sont utilisées pour représenter les relations économiques entre différentes variables.</li>
+    <li><strong>Ingénierie :</strong> Les matrices permettent de résoudre des équations dans la mécanique des structures.</li>
+    <li><strong>Physique :</strong> Les matrices sont utilisées pour résoudre des systèmes quantiques complexes.</li>
+  </ul>
+
+  <hr>
+
+  <h2>Exercices interactifs</h2>
+
+  <div class="question">
+    <strong>Question 1 :</strong><br />
+    Résoudre le système linéaire suivant à l'aide de la méthode des matrices :
+    \[
+    \begin{aligned}
+    x + 2y &= 8 \\
+    3x - y &= 7
+    \end{aligned}
+    \]<br />
+    <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      La matrice associée au système est :
+      \[
+      A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 8 \\ 7 \end{pmatrix}
+      \]
+      La solution est \( X = A^{-1}B \), donc \( x = 3 \) et \( y = 2 \).
+    </div>
   </div>
-</div>
+
+  <div class="question">
+    <strong>Question 2 :</strong><br />
+    Calculer le déterminant de la matrice suivante :
+    \[
+    A = \begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}
+    \]<br />
+    <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      Le déterminant de \( A \) est :
+      \[
+      \text{det}(A) = 4 \times 3 - 2 \times 1 = 12 - 2 = 10
+      \]
+    </div>
+  </div>
+
+  <div class="question">
+    <strong>Question 3 :</strong><br />
+    Trouver l'inverse de la matrice \( A = \begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix} \).<br />
+    <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      La matrice inverse est donnée par :
+      \[
+      A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} 5 & -3 \\ -2 & 1 \end{pmatrix}
+      \]
+      La matrice inverse est :
+      \[
+      A^{-1} = \begin{pmatrix} -5 & 3 \\ 2 & -1 \end{pmatrix}
+      \]
+    </div>
+  </div>
+
+  <div class="question">
+    <strong>Question 4 (quiz) :</strong><br />
+    Quelle est la condition nécessaire pour qu'une matrice soit inversible ?<br />
+    <input type="radio" name="q4" id="q4a" /> <label for="q4a">Le déterminant doit être nul.</label><br />
+    <input type="radio" name="q4" id="q4b" /> <label for="q4b">Le déterminant doit être non nul.</label><br />
+    <input type="radio" name="q4" id="q4c" /> <label for="q4c">La matrice doit être carrée.</label><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      La bonne réponse est : <strong>B)</strong> Le déterminant doit être non nul.
+    </div>
+  </div>
+
+  <div class="navigation">
+    <a href="chapitre9.html">Chapitre précédent : Algèbre linéaire</a>
+    <a href="index.html">Retour à l'accueil</a>  
+    <a href="chapitre11.html">Chapitre suivant : Applications avancées des matrices</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 - HamedStudios</p>
+</footer>
 
 <script>
   function toggleCorrection(button) {
