@@ -13,127 +13,153 @@
 </head>
 <body>
 
-<h1>Chapitre 1 : Notion de taux de variation et dérivée</h1>
+<!-- Barre de navigation fixe -->
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chapitre1.html">Chapitre 1</a></li>
+    <li><a href="chapitre2.html">Chapitre 2</a></li>
+    <li><a href="chapitre3.html">Chapitre 3</a></li>
+    <li><a href="chapitre4.html">Chapitre 4</a></li>
+    <li><a href="chapitre5.html">Chapitre 5</a></li>
+    <!-- Ajoute d'autres chapitres ici -->
+  </ul>
+</nav>
 
-<h2>1. Le taux de variation</h2>
-<p>
-Le taux de variation d'une fonction \( f \) entre deux points \( x \) et \( x + h \) est donné par la formule :
-</p>
-<p>\[ TV = \frac{f(x + h) - f(x)}{h} \]</p>
-<p>
-Ce rapport mesure la vitesse de changement de la fonction entre ces deux points.
-</p>
+<header>
+  <h1>Chapitre 1 : Notion de taux de variation et dérivée</h1>
+</header>
 
-<h3>Exemple :</h3>
-<p>Pour \( f(x) = x^2 \), calcule le taux de variation entre \( x = 1 \) et \( x = 1 + h \) :</p>
-<p>
-\[
-\begin{align*}
-f(1) &= 1^2 = 1 \\
-f(1 + h) &= (1 + h)^2 = 1 + 2h + h^2 \\
-TV &= \frac{f(1 + h) - f(1)}{h} = \frac{1 + 2h + h^2 - 1}{h} = \frac{2h + h^2}{h} = 2 + h
-\end{align*}
-\]
-</p>
-<p>Quand \( h \) est très petit, \( TV \approx 2 \).</p>
+<main>
+  <h2>1. Le taux de variation</h2>
+  <p>
+    Le taux de variation d'une fonction \( f \) entre deux points \( x \) et \( x + h \) est donné par la formule :
+  </p>
+  <p>\[ TV = \frac{f(x + h) - f(x)}{h} \]</p>
+  <p>
+    Ce rapport mesure la vitesse de changement de la fonction entre ces deux points.
+  </p>
 
-<h2>2. Définition de la dérivée</h2>
-<p>
-La dérivée \( f'(x) \) est la limite du taux de variation lorsque \( h \to 0 \) :
-</p>
-<p>\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]</p>
-<p>Cela correspond à la pente de la tangente à la courbe au point \( x \).</p>
+  <h3>Exemple :</h3>
+  <p>Pour \( f(x) = x^2 \), calcule le taux de variation entre \( x = 1 \) et \( x = 1 + h \) :</p>
+  <p>
+  \[
+  \begin{align*}
+  f(1) &= 1^2 = 1 \\
+  f(1 + h) &= (1 + h)^2 = 1 + 2h + h^2 \\
+  TV &= \frac{f(1 + h) - f(1)}{h} = \frac{1 + 2h + h^2 - 1}{h} = \frac{2h + h^2}{h} = 2 + h
+  \end{align*}
+  \]
+  </p>
+  <p>Quand \( h \) est très petit, \( TV \approx 2 \).</p>
 
-<h3>Exemple :</h3>
-<p>Pour \( f(x) = x^2 \) :</p>
-<p>
-\[
-\begin{align*}
-f'(x) &= \lim_{h \to 0} \frac{(x + h)^2 - x^2}{h} \\
-&= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} \\
-&= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
-&= \lim_{h \to 0} (2x + h) = 2x
-\end{align*}
-\]
-</p>
+  <h2>2. Définition de la dérivée</h2>
+  <p>
+    La dérivée \( f'(x) \) est la limite du taux de variation lorsque \( h \to 0 \) :
+  </p>
+  <p>\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]</p>
+  <p>Cela correspond à la pente de la tangente à la courbe au point \( x \).</p>
 
-<h2>3. Interprétation géométrique</h2>
-<ul>
-  <li>Si \( f'(x) > 0 \), la fonction est croissante au voisinage de \( x \).</li>
-  <li>Si \( f'(x) < 0 \), la fonction est décroissante au voisinage de \( x \).</li>
-  <li>Si \( f'(x) = 0 \), on peut avoir un maximum, un minimum ou un point d'inflexion.</li>
-</ul>
+  <h3>Exemple :</h3>
+  <p>Pour \( f(x) = x^2 \) :</p>
+  <p>
+  \[
+  \begin{align*}
+  f'(x) &= \lim_{h \to 0} \frac{(x + h)^2 - x^2}{h} \\
+  &= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} \\
+  &= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
+  &= \lim_{h \to 0} (2x + h) = 2x
+  \end{align*}
+  \]
+  </p>
 
-<hr />
+  <h2>3. Interprétation géométrique</h2>
+  <ul>
+    <li>Si \( f'(x) > 0 \), la fonction est croissante au voisinage de \( x \).</li>
+    <li>Si \( f'(x) < 0 \), la fonction est décroissante au voisinage de \( x \).</li>
+    <li>Si \( f'(x) = 0 \), on peut avoir un maximum, un minimum ou un point d'inflexion.</li>
+  </ul>
 
-<h2>Exercices interactifs</h2>
+  <hr />
 
-<div class="question">
-  <strong>Question 1 :</strong><br />
-  Soit la fonction \( f(x) = 2x + 3 \).<br />
-  Calcule le taux de variation entre \( x = 4 \) et \( x = 4 + h \).<br />
-  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    \( f(4) = 2 \times 4 + 3 = 11 \)<br />
-    \( f(4+h) = 2(4+h) + 3 = 11 + 2h \)<br />
-    \( TV = \frac{f(4+h) - f(4)}{h} = \frac{2h}{h} = 2 \)
+  <h2>Exercices interactifs</h2>
+
+  <div class="question">
+    <strong>Question 1 :</strong><br />
+    Soit la fonction \( f(x) = 2x + 3 \).<br />
+    Calcule le taux de variation entre \( x = 4 \) et \( x = 4 + h \).<br />
+    <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      \( f(4) = 2 \times 4 + 3 = 11 \)<br />
+      \( f(4+h) = 2(4+h) + 3 = 11 + 2h \)<br />
+      \( TV = \frac{f(4+h) - f(4)}{h} = \frac{2h}{h} = 2 \)
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 2 :</strong><br />
-  Trouve la dérivée \( f'(x) \) de la fonction \( f(x) = x^2 \).<br />
-  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    \( f'(x) = \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} = \lim_{h \to 0} (2x + h) = 2x \)
+  <div class="question">
+    <strong>Question 2 :</strong><br />
+    Trouve la dérivée \( f'(x) \) de la fonction \( f(x) = x^2 \).<br />
+    <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      \( f'(x) = \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} = \lim_{h \to 0} (2x + h) = 2x \)
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 3 :</strong><br />
-  Calcule la dérivée de \( f(x) = 3x^3 \).<br />
-  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La dérivée de \( x^3 \) est \( 3x^2 \), donc :<br />
-    \( f'(x) = 3 \times 3x^2 = 9x^2 \)
+  <div class="question">
+    <strong>Question 3 :</strong><br />
+    Calcule la dérivée de \( f(x) = 3x^3 \).<br />
+    <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      La dérivée de \( x^3 \) est \( 3x^2 \), donc :<br />
+      \( f'(x) = 3 \times 3x^2 = 9x^2 \)
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 4 (quiz) :</strong><br />
-  Quelle est la dérivée de la fonction constante \( f(x) = 7 \) ?<br />
-  <input type="radio" name="q4" id="q4a" value="7" /> <label for="q4a">7</label><br />
-  <input type="radio" name="q4" id="q4b" value="0" /> <label for="q4b">0</label><br />
-  <input type="radio" name="q4" id="q4c" value="x" /> <label for="q4c">x</label><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La dérivée d’une constante est toujours 0, donc la bonne réponse est <strong>B)</strong>.
+  <div class="question">
+    <strong>Question 4 (quiz) :</strong><br />
+    Quelle est la dérivée de la fonction constante \( f(x) = 7 \) ?<br />
+    <input type="radio" name="q4" id="q4a" value="7" /> <label for="q4a">7</label><br />
+    <input type="radio" name="q4" id="q4b" value="0" /> <label for="q4b">0</label><br />
+    <input type="radio" name="q4" id="q4c" value="x" /> <label for="q4c">x</label><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      La dérivée d’une constante est toujours 0, donc la bonne réponse est <strong>B)</strong>.
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 5 :</strong><br />
-  Soit \( f(x) = \frac{1}{x} \).<br />
-  Calcule le taux de variation entre \( x = 1 \) et \( x = 1 + h \).<br />
-  <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    \( f(1) = 1 \)<br />
-    \( f(1+h) = \frac{1}{1+h} \)<br />
-    \[
-    TV = \frac{\frac{1}{1+h} - 1}{h} = \frac{-1}{1+h}
-    \]
-    Quand \( h \to 0 \), \( TV \to -1 \). Donc \( f'(1) = -1 \).
+  <div class="question">
+    <strong>Question 5 :</strong><br />
+    Soit \( f(x) = \frac{1}{x} \).<br />
+    Calcule le taux de variation entre \( x = 1 \) et \( x = 1 + h \).<br />
+    <textarea rows="3" placeholder="Écris ta réponse ici..."></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      <strong>Correction :</strong><br />
+      \( f(1) = 1 \)<br />
+      \( f(1+h) = \frac{1}{1+h} \)<br />
+      \[
+      TV = \frac{\frac{1}{1+h} - 1}{h} = \frac{-1}{1+h}
+      \]
+      Quand \( h \to 0 \), \( TV \to -1 \). Donc \( f'(1) = -1 \).
+    </div>
   </div>
-</div>
+
+  <div class="navigation">
+    <a href="chapitre2.html">Chapitre suivant : Intégration</a>
+    <a href="index.html">Retour à l'accueil</a>  
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 - HamedStudios</p>
+</footer>
 
 <script>
   function toggleCorrection(button) {
