@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapitre 4 : Dérivée seconde et concavité</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 850px; margin: 30px auto; padding: 0 20px; background: #fdfdfd; color: #222; line-height: 1.6; }
+    h1, h2 { color: #0056b3; }
+    .correction { display: none; background: #eef8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
+    .question { margin-top: 25px; }
+    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
+    button:hover { background-color: #0056b3; }
+    textarea { width: 100%; font-family: monospace; padding: 8px; }
+    label { cursor: pointer; }
+    ul, li { margin-left: 20px; }
+    pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
+  </style>
+
+  <!-- Intégration MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<h1>Chapitre 4 : Dérivée seconde, concavité et points d'inflexion</h1>
+
+<p>
+<strong>Objectifs :</strong> Dans ce chapitre, tu apprendras à analyser la forme d'une courbe à l'aide de la <strong>dérivée seconde</strong>. On introduit les notions de <strong>concavité</strong>, <strong>convexité</strong> et <strong>point d'inflexion</strong>. Cela permet une étude plus précise des fonctions, notamment pour le tracé de courbes et l’interprétation graphique.
+</p>
+
+<h2>1. Dérivée seconde : définition</h2>
+<p>
+Si une fonction \( f \) est dérivable, et que sa dérivée \( f' \) est elle-même dérivable, alors on peut définir la dérivée seconde \( f'' \) comme :
+</p>
+<p>\[
+f''(x) = \frac{d}{dx}f'(x)
+\]</p>
+<p>Elle mesure la <strong>vitesse de variation de la pente</strong> de la tangente.</p>
+
+<h2>2. Concavité et convexité</h2>
+<p>
+- Si \( f''(x) > 0 \), la courbe est <strong>convexe</strong> (elle "s’ouvre vers le haut").<br>
+- Si \( f''(x) < 0 \), la courbe est <strong>concave</strong> (elle "s’ouvre vers le bas").<br>
+- Si \( f''(x) = 0 \), cela peut indiquer un <strong>point d'inflexion</strong>.
+</p>
+
+<h3>Exemple :</h3>
+<p>Soit \( f(x) = x^3 - 3x \)</p>
+<p>
+\[
+f'(x) = 3x^2 - 3 \\
+f''(x) = 6x
+\]</p>
+<p>
+- \( f''(x) = 0 \Rightarrow x = 0 \)<br>
+- Pour \( x < 0 \), \( f''(x) < 0 \) → courbe concave<br>
+- Pour \( x > 0 \), \( f''(x) > 0 \) → courbe convexe<br>
+Donc \( x = 0 \) est un <strong>point d'inflexion</strong>.
+</p>
+
+<h2>3. Point d'inflexion</h2>
+<p>
+Un point \( x_0 \) est un <strong>point d’inflexion</strong> si :
+<ul>
+  <li>\( f''(x_0) = 0 \)</li>
+  <li>Et le signe de \( f'' \) change autour de \( x_0 \)</li>
+</ul>
+La courbe change de concavité à ce point.
+</p>
+
+<h2>4. Application : tracer une courbe avec \( f' \) et \( f'' \)</h2>
+<p>
+On suit 4 étapes :
+<ol>
+  <li>Calculer \( f'(x) \), puis \( f''(x) \)</li>
+  <li>Résoudre \( f'(x) = 0 \) (extrema) et \( f''(x) = 0 \) (inflexion)</li>
+  <li>Faire un tableau de signes de \( f' \) et \( f'' \)</li>
+  <li>Tracer la courbe avec les variations et la concavité</li>
+</ol>
+</p>
+
+<hr />
+
+<h2>Exercices interactifs</h2>
+
+<div class="question">
+  <strong>Question 1 :</strong><br />
+  Soit \( f(x) = x^4 \). Calcule la dérivée seconde \( f''(x) \) et donne la concavité.<br />
+  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \( f'(x) = 4x^3 \)<br />
+    \( f''(x) = 12x^2 \geq 0 \) donc la fonction est toujours <strong>convexe</strong>.
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 2 :</strong><br />
+  Soit \( f(x) = x^3 - 6x \). Trouve les points d’inflexion de \( f \).<br />
+  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \( f'(x) = 3x^2 - 6 \), \( f''(x) = 6x \)<br />
+    \( f''(x) = 0 \Rightarrow x = 0 \)<br />
+    Signe change autour de 0 → il y a un <strong>point d'inflexion</strong> en \( x = 0 \)
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 3 :</strong><br />
+  Quel est le rôle de la dérivée seconde dans l’étude d’une fonction ?<br />
+  <textarea rows="4" placeholder="Réponse libre..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    Elle permet de connaître la concavité de la courbe (si elle est "courbée vers le haut" ou "vers le bas"), et de repérer les points d’inflexion.
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 4 (quiz) :</strong><br />
+  Si \( f''(x) > 0 \), alors la fonction est :<br />
+  <input type="radio" name="q4" id="q4a" /> <label for="q4a">Concave</label><br />
+  <input type="radio" name="q4" id="q4b" /> <label for="q4b">Convexe</label><br />
+  <input type="radio" name="q4" id="q4c" /> <label for="q4c">Constante</label><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La bonne réponse est : <strong>B) Convexe</strong>
+  </div>
+</div>
+
+<script>
+  function toggleCorrection(button) {
+    const correctionDiv = button.nextElementSibling;
+    if (correctionDiv.style.display === 'block') {
+      correctionDiv.style.display = 'none';
+      button.textContent = 'Afficher la correction';
+    } else {
+      correctionDiv.style.display = 'block';
+      button.textContent = 'Cacher la correction';
+    }
+  }
+</script>
+
+</body>
+</html>
