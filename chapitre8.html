@@ -2,21 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Chapitre 8 : Les équations différentielles – Introduction, résolution et applications</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; background: #fefefe; color: #222; line-height: 1.7; }
-    h1, h2 { color: #0056b3; }
-    .correction { display: none; background: #eef8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
-    .question { margin-top: 25px; }
-    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
-    button:hover { background-color: #0056b3; }
-    textarea { width: 100%; font-family: monospace; padding: 8px; }
-    label { cursor: pointer; }
-    pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
-    ul, li { margin-left: 20px; }
-  </style>
+  <title>Chapitre 8 : Suites arithmétiques et géométriques – Première D</title>
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- MathJax -->
+  <!-- Intégration de MathJax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -24,119 +13,117 @@
 </head>
 <body>
 
-<h1>Chapitre 8 : Les équations différentielles – Introduction, résolution et applications</h1>
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chapitre1.html">Chapitre 1</a></li>
+    <li><a href="chapitre2.html">Chapitre 2</a></li>
+    <li><a href="chapitre3.html">Chapitre 3</a></li>
+    <li><a href="chapitre4.html">Chapitre 4</a></li>
+    <li><a href="chapitre5.html">Chapitre 5</a></li>
+    <li><a href="chapitre6.html">Chapitre 6</a></li>
+    <li><a href="chapitre7.html">Chapitre 7</a></li>
+    <li><a href="chapitre8.html" class="active">Chapitre 8</a></li>
+    <li><a href="chapitre10.html">Chapitre 10</a></li>
+  </ul>
+</nav>
 
-<p><strong>Description :</strong></p>
-<p>
-Dans ce chapitre, nous abordons les **équations différentielles**, qui sont utilisées pour modéliser une grande variété de phénomènes naturels, comme le mouvement des corps, la propagation des ondes, ou la croissance de populations. Nous commencerons par une introduction aux types d'équations différentielles, puis explorerons les méthodes de résolution et leurs applications pratiques dans des contextes réels.
-</p>
+<header>
+  <h1>Chapitre 8 : Suites arithmétiques et géométriques</h1>
+</header>
 
-<h2>1. Qu'est-ce qu'une équation différentielle ?</h2>
-<p>
-Une **équation différentielle** est une équation qui relie une fonction inconnue \( y(x) \) et ses dérivées. Elle exprime une relation entre les variations d'une fonction et sa propre dérivée.
-</p>
-<p>Exemples d’équations différentielles :</p>
-<ul>
-  <li>Équation différentielle du premier ordre :<br> \( \frac{dy}{dx} = 2x \)</li>
-  <li>Équation différentielle du second ordre :<br> \( \frac{d^2y}{dx^2} + y = 0 \)</li>
-</ul>
+<main>
+  <h2>1. Suites arithmétiques</h2>
+  <p>Une suite \( (u_n) \) est dite arithmétique s’il existe un réel \( r \) tel que :</p>
+  <p>\[
+  u_{n+1} = u_n + r
+  \]</p>
+  <p>Formule explicite :</p>
+  <p>\[
+  u_n = u_0 + n \cdot r
+  \]</p>
 
-<h2>2. Types d'équations différentielles</h2>
-<ul>
-  <li><strong>Équations différentielles ordinaires (EDO) :</strong> Une équation qui dépend d'une seule variable indépendante (par exemple, \( x \)).</li>
-  <li><strong>Équations différentielles partielles (EDP) :</strong> Une équation qui dépend de plusieurs variables indépendantes (par exemple, \( x \) et \( t \)).</li>
-</ul>
+  <h2>2. Suites géométriques</h2>
+  <p>Une suite \( (v_n) \) est dite géométrique s’il existe un réel \( q \) tel que :</p>
+  <p>\[
+  v_{n+1} = v_n \cdot q
+  \]</p>
+  <p>Formule explicite :</p>
+  <p>\[
+  v_n = v_0 \cdot q^n
+  \]</p>
 
-<h2>3. Résolution des équations différentielles du premier ordre</h2>
-<p>
-Une équation différentielle du premier ordre prend la forme générale :
-\[
-\frac{dy}{dx} = f(x, y)
-\]
-Pour résoudre cette équation, on peut utiliser la méthode de séparation des variables si l'équation est séparable, ou encore des méthodes d'intégration directe.
+  <h2>Remarques :</h2>
+  <ul>
+    <li>Si \( q > 1 \), la suite géométrique est croissante.</li>
+    <li>Si \( 0 < q < 1 \), la suite est décroissante.</li>
+    <li>Si \( q < 0 \), la suite alterne.</li>
+  </ul>
 
-<h3>Exemple :</h3>
-Résolvons l'équation différentielle \( \frac{dy}{dx} = x^2 \). La solution est :
-\[
-y = \int x^2 \, dx = \frac{x^3}{3} + C
-\]
-Où \( C \) est une constante d'intégration.
+  <hr />
 
-<h2>4. Résolution des équations différentielles du second ordre</h2>
-<p>
-Les équations différentielles du second ordre prennent la forme :
-\[
-\frac{d^2y}{dx^2} + p(x) \frac{dy}{dx} + q(x) y = 0
-\]
-Ces équations peuvent être résolues par des méthodes variées comme la méthode des coefficients indéterminés ou la méthode de variation des paramètres.
-</p>
+  <h2>Exercices interactifs</h2>
 
-<h3>Exemple :</h3>
-Résolvons l’équation \( \frac{d^2y}{dx^2} + y = 0 \), qui est une équation différentielle homogène du second ordre :
-\[
-\text{La solution générale est } y(x) = A \cos(x) + B \sin(x)
-\]
-Où \( A \) et \( B \) sont des constantes déterminées par les conditions initiales.
-
-<h2>5. Applications des équations différentielles</h2>
-<p>
-Les équations différentielles sont utilisées pour modéliser une grande variété de phénomènes dans les sciences et l’ingénierie. Voici quelques exemples :
-</p>
-<ul>
-  <li><strong>Le mouvement des ressorts :</strong> L’équation \( m \frac{d^2y}{dt^2} + k y = 0 \) modélise le mouvement d'un ressort (loi de Hooke).</li>
-  <li><strong>La croissance des populations :</strong> L'équation \( \frac{dP}{dt} = rP(1 - \frac{P}{K}) \) modélise la croissance d'une population (modèle logistique).</li>
-  <li><strong>Les circuits électriques :</strong> Les équations de Kirchoff pour les circuits RL, RC et RLC sont des exemples d’équations différentielles appliquées aux systèmes électriques.</li>
-</ul>
-
-<hr>
-
-<h2>Exercices interactifs</h2>
-
-<div class="question">
-  <strong>Question 1 :</strong><br />
-  Résolvez l’équation \( \frac{dy}{dx} = 3x^2 \).<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La solution est \( y(x) = x^3 + C \), où \( C \) est une constante d'intégration.
+  <div class="question">
+    <strong>Question 1 :</strong><br />
+    Soit une suite arithmétique de premier terme \( u_0 = 5 \) et de raison \( r = 3 \). Calcule \( u_4 \).<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      \[
+      u_4 = u_0 + 4 \cdot r = 5 + 4 \cdot 3 = 5 + 12 = 17
+      \]
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 2 :</strong><br />
-  Résolvez l’équation \( \frac{d^2y}{dx^2} + 4y = 0 \).<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La solution générale est \( y(x) = A \cos(2x) + B \sin(2x) \), où \( A \) et \( B \) sont des constantes.
+  <div class="question">
+    <strong>Question 2 :</strong><br />
+    Soit \( v_0 = 2 \) et \( q = 4 \). Calcule \( v_3 \) pour la suite géométrique.<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      \[
+      v_3 = v_0 \cdot q^3 = 2 \cdot 4^3 = 2 \cdot 64 = 128
+      \]
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 3 :</strong><br />
-  Résolvez l’équation \( \frac{dy}{dx} = y \).<br />
-  <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La solution est \( y(x) = Ce^x \), où \( C \) est une constante.
+  <div class="question">
+    <strong>Question 3 :</strong><br />
+    Détermine si la suite \( a_n = 7n + 2 \) est arithmétique ou géométrique.<br />
+    <textarea rows="3"></textarea><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      C’est une suite arithmétique car :<br />
+      \[
+      a_{n+1} = 7(n+1) + 2 = 7n + 7 + 2 = a_n + 7
+      \]
+      Donc raison \( r = 7 \).
+    </div>
   </div>
-</div>
 
-<div class="question">
-  <strong>Question 4 (quiz) :</strong><br />
-  Quelle est la solution générale de l’équation \( \frac{d^2y}{dx^2} + 9y = 0 \) ?<br />
-  <input type="radio" name="q4" id="q4a" /> <label for="q4a">\( y(x) = A \cos(3x) + B \sin(3x) \)</label><br />
-  <input type="radio" name="q4" id="q4b" /> <label for="q4b">\( y(x) = A \cos(x) + B \sin(x) \)</label><br />
-  <input type="radio" name="q4" id="q4c" /> <label for="q4c">\( y(x) = A e^{3x} + B e^{-3x} \)</label><br />
-  <button onclick="toggleCorrection(this)">Afficher la correction</button>
-  <div class="correction">
-    <strong>Correction :</strong><br />
-    La bonne réponse est : <strong>A)</strong> \( y(x) = A \cos(3x) + B \sin(3x) \).
+  <div class="question">
+    <strong>Question 4 (quiz) :</strong><br />
+    Si une suite est définie par \( u_n = 5 \cdot 2^n \), alors :<br />
+    <input type="radio" name="q4" id="q4a" /> <label for="q4a">Elle est arithmétique</label><br />
+    <input type="radio" name="q4" id="q4b" /> <label for="q4b">Elle est géométrique</label><br />
+    <input type="radio" name="q4" id="q4c" /> <label for="q4c">Elle n'est ni arithmétique ni géométrique</label><br />
+    <button onclick="toggleCorrection(this)">Afficher la correction</button>
+    <div class="correction">
+      Réponse : <strong>B)</strong> C’est une suite géométrique de raison \( q = 2 \).
+    </div>
   </div>
-</div>
+
+  <div class="navigation">
+    <a href="chapitre7.html">Chapitre précédent : Limites de suites</a>
+    <a href="index.html">Retour à l'accueil</a>
+    <a href="chapitre10.html">Chapitre suivant : Probabilités et statistiques</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 - HamedStudios</p>
+</footer>
 
 <script>
   function toggleCorrection(button) {
