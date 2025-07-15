@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapitre 5 : Étude de fonctions et asymptotes</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; background: #fefefe; color: #222; line-height: 1.7; }
+    h1, h2 { color: #0056b3; }
+    .correction { display: none; background: #eef8ff; padding: 10px; margin-top: 5px; border-left: 4px solid #007BFF; }
+    .question { margin-top: 25px; }
+    button { margin-top: 5px; cursor: pointer; background-color: #007BFF; border: none; color: white; padding: 6px 12px; border-radius: 4px; }
+    button:hover { background-color: #0056b3; }
+    textarea { width: 100%; font-family: monospace; padding: 8px; }
+    label { cursor: pointer; }
+    pre { background: #f7f7f7; padding: 10px; border-left: 4px solid #ccc; overflow-x: auto; }
+    ul, li { margin-left: 20px; }
+  </style>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<h1>Chapitre 5 : Étude de fonctions – limites et asymptotes</h1>
+
+<p><strong>Description :</strong></p>
+<p>
+Ce chapitre approfondit l’analyse des fonctions à travers l’étude des <strong>limites</strong>, des <strong>comportements à l’infini</strong>, et la recherche des <strong>asymptotes</strong>. On combine tout ce qu'on a appris (dérivée, concavité, variation) pour établir une <strong>étude complète de courbes</strong>. On apprend aussi à interpréter graphiquement les tendances et comportements aux bords du domaine de définition.
+</p>
+
+<h2>1. Limite d’une fonction</h2>
+<p>
+On dit que \( \lim_{x \to a} f(x) = L \) si les valeurs de \( f(x) \) se rapprochent de \( L \) lorsque \( x \) se rapproche de \( a \).
+</p>
+
+<h3>Exemple :</h3>
+<p>\[
+f(x) = \frac{1}{x} \quad \text{Alors :} \quad \lim_{x \to 0^-} f(x) = -\infty, \quad \lim_{x \to 0^+} f(x) = +\infty
+\]</p>
+
+<h2>2. Asymptotes</h2>
+<ul>
+  <li><strong>Verticale</strong> : si \( \lim_{x \to a} f(x) = \pm\infty \), alors \( x = a \) est une asymptote verticale.</li>
+  <li><strong>Horizontale</strong> : si \( \lim_{x \to \infty} f(x) = l \), alors \( y = l \) est une asymptote horizontale.</li>
+  <li><strong>Oblique</strong> : si \( \lim_{x \to \infty} f(x) - (ax + b) = 0 \), alors \( y = ax + b \) est une asymptote oblique.</li>
+</ul>
+
+<h2>3. Étapes d'une étude complète</h2>
+<ol>
+  <li>Déterminer le domaine de définition de la fonction.</li>
+  <li>Étudier les limites aux bornes (infinis ou points exclus).</li>
+  <li>Calculer \( f'(x) \) puis établir un tableau de variation.</li>
+  <li>Étudier \( f''(x) \) pour la concavité et les inflexions.</li>
+  <li>Déterminer les asymptotes éventuelles.</li>
+  <li>Tracer une courbe représentative fidèle.</li>
+</ol>
+
+<h2>4. Exemple complet</h2>
+<p>Soit \( f(x) = \frac{2x + 1}{x - 1} \)</p>
+<ul>
+  <li><strong>Domaine</strong> : \( x \neq 1 \)</li>
+  <li><strong>Asymptote verticale</strong> : \( x = 1 \)</li>
+  <li><strong>Limite à l'infini</strong> : \( \lim_{x \to \infty} \frac{2x+1}{x-1} = 2 \) ⇒ Asymptote horizontale : \( y = 2 \)</li>
+</ul>
+
+<hr>
+
+<h2>Exercices interactifs</h2>
+
+<div class="question">
+  <strong>Question 1 :</strong><br />
+  Soit \( f(x) = \frac{3x + 2}{x - 4} \). Quelle est l'asymptote verticale ?<br />
+  <textarea rows="2" placeholder="Ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    Le dénominateur s’annule pour \( x = 4 \), donc l’asymptote verticale est \( x = 4 \).
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 2 :</strong><br />
+  Calcule \( \lim_{x \to \infty} \frac{x + 5}{2x - 1} \).<br />
+  <textarea rows="2" placeholder="Écris ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \[
+    \frac{x + 5}{2x - 1} = \frac{1 + \frac{5}{x}}{2 - \frac{1}{x}} \to \frac{1}{2} \text{ donc } y = \frac{1}{2} \text{ est une asymptote horizontale.}
+    \]
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 3 :</strong><br />
+  Quelle est l'asymptote oblique de \( f(x) = \frac{x^2 + 1}{x} \) ?<br />
+  <textarea rows="2" placeholder="Ta réponse ici..."></textarea><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    \[
+    f(x) = \frac{x^2 + 1}{x} = x + \frac{1}{x} \Rightarrow \lim_{x \to \infty} f(x) = x + \frac{1}{x} \to x
+    \]
+    Donc asymptote oblique : \( y = x \)
+  </div>
+</div>
+
+<div class="question">
+  <strong>Question 4 (quiz) :</strong><br />
+  Si \( \lim_{x \to a^-} f(x) = +\infty \) et \( \lim_{x \to a^+} f(x) = -\infty \), alors :<br />
+  <input type="radio" name="q4" id="q4a" /> <label for="q4a">\( y = a \) est une asymptote horizontale</label><br />
+  <input type="radio" name="q4" id="q4b" /> <label for="q4b">\( x = a \) est une asymptote verticale</label><br />
+  <input type="radio" name="q4" id="q4c" /> <label for="q4c">Pas d’asymptote</label><br />
+  <button onclick="toggleCorrection(this)">Afficher la correction</button>
+  <div class="correction">
+    <strong>Correction :</strong><br />
+    La bonne réponse est : <strong>B)</strong> \( x = a \) est une asymptote verticale.
+  </div>
+</div>
+
+<script>
+  function toggleCorrection(button) {
+    const correctionDiv = button.nextElementSibling;
+    if (correctionDiv.style.display === 'block') {
+      correctionDiv.style.display = 'none';
+      button.textContent = 'Afficher la correction';
+    } else {
+      correctionDiv.style.display = 'block';
+      button.textContent = 'Cacher la correction';
+    }
+  }
+</script>
+
+</body>
+</html>
