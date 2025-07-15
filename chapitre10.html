@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Chapitre 8 : Les équations différentielles – Introduction, résolution et applications</title>
+  <title>Chapitre 10 : Matrices et systèmes linéaires – Introduction, méthodes de résolution et applications</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 20px; background: #fefefe; color: #222; line-height: 1.7; }
     h1, h2 { color: #0056b3; }
@@ -24,68 +24,80 @@
 </head>
 <body>
 
-<h1>Chapitre 8 : Les équations différentielles – Introduction, résolution et applications</h1>
+<h1>Chapitre 10 : Matrices et systèmes linéaires – Introduction, méthodes de résolution et applications</h1>
 
 <p><strong>Description :</strong></p>
 <p>
-Dans ce chapitre, nous abordons les **équations différentielles**, qui sont utilisées pour modéliser une grande variété de phénomènes naturels, comme le mouvement des corps, la propagation des ondes, ou la croissance de populations. Nous commencerons par une introduction aux types d'équations différentielles, puis explorerons les méthodes de résolution et leurs applications pratiques dans des contextes réels.
+Dans ce chapitre, nous étudions les **matrices**, qui sont des objets mathématiques utilisés pour représenter des systèmes linéaires, des transformations et des données complexes. Nous aborderons les **méthodes de résolution** de systèmes linéaires, ainsi que des applications pratiques dans des domaines comme l'algèbre, l'informatique, l'économie et l'ingénierie.
 </p>
 
-<h2>1. Qu'est-ce qu'une équation différentielle ?</h2>
+<h2>1. Introduction aux matrices</h2>
 <p>
-Une **équation différentielle** est une équation qui relie une fonction inconnue \( y(x) \) et ses dérivées. Elle exprime une relation entre les variations d'une fonction et sa propre dérivée.
-</p>
-<p>Exemples d’équations différentielles :</p>
-<ul>
-  <li>Équation différentielle du premier ordre :<br> \( \frac{dy}{dx} = 2x \)</li>
-  <li>Équation différentielle du second ordre :<br> \( \frac{d^2y}{dx^2} + y = 0 \)</li>
-</ul>
-
-<h2>2. Types d'équations différentielles</h2>
-<ul>
-  <li><strong>Équations différentielles ordinaires (EDO) :</strong> Une équation qui dépend d'une seule variable indépendante (par exemple, \( x \)).</li>
-  <li><strong>Équations différentielles partielles (EDP) :</strong> Une équation qui dépend de plusieurs variables indépendantes (par exemple, \( x \) et \( t \)).</li>
-</ul>
-
-<h2>3. Résolution des équations différentielles du premier ordre</h2>
-<p>
-Une équation différentielle du premier ordre prend la forme générale :
-\[
-\frac{dy}{dx} = f(x, y)
-\]
-Pour résoudre cette équation, on peut utiliser la méthode de séparation des variables si l'équation est séparable, ou encore des méthodes d'intégration directe.
-
-<h3>Exemple :</h3>
-Résolvons l'équation différentielle \( \frac{dy}{dx} = x^2 \). La solution est :
-\[
-y = \int x^2 \, dx = \frac{x^3}{3} + C
-\]
-Où \( C \) est une constante d'intégration.
-
-<h2>4. Résolution des équations différentielles du second ordre</h2>
-<p>
-Les équations différentielles du second ordre prennent la forme :
-\[
-\frac{d^2y}{dx^2} + p(x) \frac{dy}{dx} + q(x) y = 0
-\]
-Ces équations peuvent être résolues par des méthodes variées comme la méthode des coefficients indéterminés ou la méthode de variation des paramètres.
+Une **matrice** est un tableau rectangulaire de nombres, organisés en lignes et en colonnes. Les matrices sont souvent utilisées pour résoudre des systèmes linéaires ou représenter des transformations géométriques.
 </p>
 
 <h3>Exemple :</h3>
-Résolvons l’équation \( \frac{d^2y}{dx^2} + y = 0 \), qui est une équation différentielle homogène du second ordre :
+Voici une matrice \( A \) de taille \( 2 \times 3 \) :
 \[
-\text{La solution générale est } y(x) = A \cos(x) + B \sin(x)
+A = \begin{pmatrix} 
+1 & 2 & 3 \\
+4 & 5 & 6 
+\end{pmatrix}
 \]
-Où \( A \) et \( B \) sont des constantes déterminées par les conditions initiales.
+Les éléments de la matrice \( A \) sont appelés **éléments de la matrice**, et chaque élément est référencé par son indice de ligne et de colonne.
 
-<h2>5. Applications des équations différentielles</h2>
+<h2>2. Matrices inverses</h2>
 <p>
-Les équations différentielles sont utilisées pour modéliser une grande variété de phénomènes dans les sciences et l’ingénierie. Voici quelques exemples :
+La **matrice inverse** d'une matrice \( A \), notée \( A^{-1} \), est la matrice qui, multipliée par \( A \), donne la matrice identité \( I \) (où \( I \) est une matrice carrée de taille \( n \times n \) avec des 1 sur la diagonale et des 0 ailleurs).
 </p>
+Une matrice carrée \( A \) est inversible si et seulement si son **déterminant** est non nul.
+
+<h3>Exemple :</h3>
+Si \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \), alors la matrice inverse \( A^{-1} \) est donnée par :
+\[
+A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+\]
+Où \( a, b, c, d \) sont les éléments de \( A \). Le déterminant de \( A \) est \( \text{det}(A) = ad - bc \).
+
+<h2>3. Résolution des systèmes linéaires</h2>
+<p>
+Un **système linéaire** est un ensemble d'équations linéaires que l'on cherche à résoudre. Par exemple, un système de deux équations à deux inconnues :
+\[
+\begin{aligned}
+x + 2y &= 5 \\
+3x - y &= 7
+\end{aligned}
+\]
+Ce système peut être résolu par **méthodes directes** comme l'**élimination de Gauss** ou la **méthode de substitution**, ou en utilisant les matrices.
+
+<h3>Exemple :</h3>
+On représente le système linéaire par une matrice :
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 5 \\ 7 \end{pmatrix}
+\]
+La solution du système est donnée par \( X = A^{-1} B \), où \( X = \begin{pmatrix} x \\ y \end{pmatrix} \).
+
+<h2>4. Le déterminant d'une matrice</h2>
+<p>
+Le **déterminant** d'une matrice carrée est un nombre qui peut être utilisé pour déterminer si une matrice est inversible. Si le déterminant est nul, la matrice n'a pas d'inverse.
+</p>
+Pour une matrice \( 2 \times 2 \) :
+\[
+A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+\]
+Le déterminant de \( A \) est donné par :
+\[
+\text{det}(A) = ad - bc
+\]
+
+<h2>5. Applications des matrices et des systèmes linéaires</h2>
+<p>
+Les matrices et les systèmes linéaires ont de nombreuses applications dans différents domaines :
 <ul>
-  <li><strong>Le mouvement des ressorts :</strong> L’équation \( m \frac{d^2y}{dt^2} + k y = 0 \) modélise le mouvement d'un ressort (loi de Hooke).</li>
-  <li><strong>La croissance des populations :</strong> L'équation \( \frac{dP}{dt} = rP(1 - \frac{P}{K}) \) modélise la croissance d'une population (modèle logistique).</li>
-  <li><strong>Les circuits électriques :</strong> Les équations de Kirchoff pour les circuits RL, RC et RLC sont des exemples d’équations différentielles appliquées aux systèmes électriques.</li>
+  <li><strong>Informatique :</strong> Les matrices sont utilisées pour des transformations dans la programmation graphique, les réseaux neuronaux et les algorithmes de traitement d'images.</li>
+  <li><strong>Économie :</strong> Les matrices sont utilisées dans les modèles économiques pour représenter les relations entre les différentes variables économiques.</li>
+  <li><strong>Ingénierie :</strong> Dans la mécanique des structures, les matrices permettent de résoudre les équations de déformation et de contrainte dans les matériaux.</li>
+  <li><strong>Physique :</strong> Les matrices sont utilisées pour résoudre les équations qui décrivent les systèmes quantiques et les phénomènes physiques complexes.</li>
 </ul>
 
 <hr>
@@ -94,47 +106,71 @@ Les équations différentielles sont utilisées pour modéliser une grande vari�
 
 <div class="question">
   <strong>Question 1 :</strong><br />
-  Résolvez l’équation \( \frac{dy}{dx} = 3x^2 \).<br />
+  Résoudre le système linéaire suivant à l'aide de la méthode des matrices :
+  \[
+  \begin{aligned}
+  x + 2y &= 8 \\
+  3x - y &= 7
+  \end{aligned}
+  \]<br />
   <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
   <button onclick="toggleCorrection(this)">Afficher la correction</button>
   <div class="correction">
     <strong>Correction :</strong><br />
-    La solution est \( y(x) = x^3 + C \), où \( C \) est une constante d'intégration.
+    La matrice associée au système est :
+    \[
+    A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}, \quad B = \begin{pmatrix} 8 \\ 7 \end{pmatrix}
+    \]
+    La solution est \( X = A^{-1}B \). La solution est \( x = 3 \) et \( y = 2 \).
   </div>
 </div>
 
 <div class="question">
   <strong>Question 2 :</strong><br />
-  Résolvez l’équation \( \frac{d^2y}{dx^2} + 4y = 0 \).<br />
+  Calculer le déterminant de la matrice suivante :
+  \[
+  A = \begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}
+  \]<br />
   <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
   <button onclick="toggleCorrection(this)">Afficher la correction</button>
   <div class="correction">
     <strong>Correction :</strong><br />
-    La solution générale est \( y(x) = A \cos(2x) + B \sin(2x) \), où \( A \) et \( B \) sont des constantes.
+    Le déterminant de \( A \) est donné par :
+    \[
+    \text{det}(A) = 4 \times 3 - 2 \times 1 = 12 - 2 = 10
+    \]
   </div>
 </div>
 
 <div class="question">
   <strong>Question 3 :</strong><br />
-  Résolvez l’équation \( \frac{dy}{dx} = y \).<br />
+  Trouver l'inverse de la matrice \( A = \begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix} \).<br />
   <textarea rows="3" placeholder="Ta réponse ici..."></textarea><br />
   <button onclick="toggleCorrection(this)">Afficher la correction</button>
   <div class="correction">
     <strong>Correction :</strong><br />
-    La solution est \( y(x) = Ce^x \), où \( C \) est une constante.
+    La matrice inverse est donnée par :
+    \[
+    A^{-1} = \frac{1}{\text{det}(A)} \begin{pmatrix} 5 & -3 \\ -2 & 1 \end{pmatrix}
+    \]
+    Le déterminant de \( A \) est \( \text{det}(A) = 1 \times 5 - 3 \times 2 = -1 \).
+    La matrice inverse est :
+    \[
+    A^{-1} = \begin{pmatrix} -5 & 3 \\ 2 & -1 \end{pmatrix}
+    \]
   </div>
 </div>
 
 <div class="question">
   <strong>Question 4 (quiz) :</strong><br />
-  Quelle est la solution générale de l’équation \( \frac{d^2y}{dx^2} + 9y = 0 \) ?<br />
-  <input type="radio" name="q4" id="q4a" /> <label for="q4a">\( y(x) = A \cos(3x) + B \sin(3x) \)</label><br />
-  <input type="radio" name="q4" id="q4b" /> <label for="q4b">\( y(x) = A \cos(x) + B \sin(x) \)</label><br />
-  <input type="radio" name="q4" id="q4c" /> <label for="q4c">\( y(x) = A e^{3x} + B e^{-3x} \)</label><br />
+  Quelle est la condition nécessaire pour qu'une matrice soit inversible ?<br />
+  <input type="radio" name="q4" id="q4a" /> <label for="q4a">Le déterminant doit être nul.</label><br />
+  <input type="radio" name="q4" id="q4b" /> <label for="q4b">Le déterminant doit être non nul.</label><br />
+  <input type="radio" name="q4" id="q4c" /> <label for="q4c">La matrice doit être carrée.</label><br />
   <button onclick="toggleCorrection(this)">Afficher la correction</button>
   <div class="correction">
     <strong>Correction :</strong><br />
-    La bonne réponse est : <strong>A)</strong> \( y(x) = A \cos(3x) + B \sin(3x) \).
+    La bonne réponse est : <strong>B)</strong> Le déterminant doit être non nul.
   </div>
 </div>
 
